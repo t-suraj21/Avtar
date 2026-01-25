@@ -16,7 +16,7 @@ export default function ServiceCard({ id, title, desc, icon }) {
       </div>
       <div className="mt-4 flex gap-2">
         <Link to={`/services/${id}`} className="btn-primary text-sm flex-1">View Details</Link>
-        <Link to={`/checkout?service=${id}`} className="btn-secondary text-sm">Order Now</Link>
+        <Link to="/contact" className="btn-secondary text-sm">Get Quote</Link>
       </div>
     </motion.div>
   );

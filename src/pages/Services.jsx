@@ -306,13 +306,13 @@ export default function Services() {
                         </span>
                       </motion.button>
                     </Link>
-                    <Link to={`/checkout?service=${service.id}`}>
+                    <Link to="/contact">
                       <motion.button
                         className="px-6 py-3 border-2 border-white/20 backdrop-blur-xl rounded-xl font-semibold hover:bg-white/10 transition-all"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        Order
+                        Get Quote
                       </motion.button>
                     </Link>
                   </div>
