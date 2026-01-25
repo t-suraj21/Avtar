@@ -235,8 +235,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partners Section */}
-      <section className="py-12 sm:py-16 px-4 border-y border-white/5 bg-white/2">
+      {/* Partners Section - Infinite Scroller */}
+      <section className="py-12 sm:py-16 px-4 border-y border-white/5 bg-white/2 overflow-hidden">
         <div className="container-custom max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -247,27 +247,57 @@ export default function Home() {
             <p className="text-center text-white/40 text-sm mb-8">Partnering with top industry experts</p>
           </motion.div>
           
-          <motion.div 
-            className="flex flex-wrap justify-center items-center gap-8 sm:gap-12 md:gap-16"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ staggerChildren: 0.1 }}
-          >
-            {partners.map((partner, index) => (
-              <motion.div
-                key={index}
-                className="grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 0.4, y: 0 }}
-                whileHover={{ opacity: 1, scale: 1.1 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
+          {/* Infinite Scrolling Partners */}
+          <div className="relative">
+            <div className="overflow-hidden">
+              <motion.div 
+                className="flex gap-8 sm:gap-12 md:gap-16"
+                animate={{
+                  x: [0, -1200],
+                }}
+                transition={{
+                  x: {
+                    repeat: Infinity,
+                    repeatType: "loop",
+                    duration: 20,
+                    ease: "linear",
+                  },
+                }}
               >
-                <img src={partner.logo} alt={partner.name} className="w-16 h-16 sm:w-20 sm:h-20" />
+                {/* First set */}
+                {partners.map((partner, index) => (
+                  <div
+                    key={`first-${index}`}
+                    className="flex-shrink-0 grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                  >
+                    <img src={partner.logo} alt={partner.name} className="w-16 h-16 sm:w-20 sm:h-20" />
+                  </div>
+                ))}
+                {/* Second set for seamless loop */}
+                {partners.map((partner, index) => (
+                  <div
+                    key={`second-${index}`}
+                    className="flex-shrink-0 grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                  >
+                    <img src={partner.logo} alt={partner.name} className="w-16 h-16 sm:w-20 sm:h-20" />
+                  </div>
+                ))}
+                {/* Third set for extra smooth scrolling */}
+                {partners.map((partner, index) => (
+                  <div
+                    key={`third-${index}`}
+                    className="flex-shrink-0 grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                  >
+                    <img src={partner.logo} alt={partner.name} className="w-16 h-16 sm:w-20 sm:h-20" />
+                  </div>
+                ))}
               </motion.div>
-            ))}
-          </motion.div>
+            </div>
+            
+            {/* Fade effect on edges */}
+            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0a0a0a] to-transparent pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#0a0a0a] to-transparent pointer-events-none"></div>
+          </div>
         </div>
       </section>
 
