@@ -331,8 +331,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats/Impact Section */}
-      <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white/2">
+      {/* Stats/Impact Section - Hidden on Mobile */}
+      <section className="hidden md:block py-16 sm:py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white/2">
         <div className="container-custom max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left - Content */}
