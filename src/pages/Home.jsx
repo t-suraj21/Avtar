@@ -235,7 +235,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Partners Section - Infinite Scroller */}
+      {/* Avtar Name Scroller Section */}
       <section className="py-12 sm:py-16 px-4 border-y border-white/5 bg-white/2 overflow-hidden">
         <div className="container-custom max-w-7xl mx-auto">
           <motion.div
@@ -247,56 +247,40 @@ export default function Home() {
             <p className="text-center text-white/40 text-sm mb-8">Partnering with top industry experts</p>
           </motion.div>
           
-          {/* Infinite Scrolling Partners */}
+          {/* Infinite Scrolling Avtar Name */}
           <div className="relative">
             <div className="overflow-hidden">
               <motion.div 
-                className="flex gap-8 sm:gap-12 md:gap-16"
+                className="flex gap-8 sm:gap-12 md:gap-16 items-center"
                 animate={{
-                  x: [0, -1200],
+                  x: [0, -800],
                 }}
                 transition={{
                   x: {
                     repeat: Infinity,
                     repeatType: "loop",
-                    duration: 20,
+                    duration: 15,
                     ease: "linear",
                   },
                 }}
               >
-                {/* First set */}
-                {partners.map((partner, index) => (
+                {/* Repeat Avtar name multiple times for seamless scrolling */}
+                {[...Array(12)].map((_, index) => (
                   <div
-                    key={`first-${index}`}
-                    className="flex-shrink-0 grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300 cursor-pointer"
+                    key={index}
+                    className="flex-shrink-0 text-white/20 hover:text-white/60 transition-all duration-300 cursor-default"
                   >
-                    <img src={partner.logo} alt={partner.name} className="w-16 h-16 sm:w-20 sm:h-20" />
-                  </div>
-                ))}
-                {/* Second set for seamless loop */}
-                {partners.map((partner, index) => (
-                  <div
-                    key={`second-${index}`}
-                    className="flex-shrink-0 grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                  >
-                    <img src={partner.logo} alt={partner.name} className="w-16 h-16 sm:w-20 sm:h-20" />
-                  </div>
-                ))}
-                {/* Third set for extra smooth scrolling */}
-                {partners.map((partner, index) => (
-                  <div
-                    key={`third-${index}`}
-                    className="flex-shrink-0 grayscale hover:grayscale-0 opacity-40 hover:opacity-100 transition-all duration-300 cursor-pointer"
-                  >
-                    <img src={partner.logo} alt={partner.name} className="w-16 h-16 sm:w-20 sm:h-20" />
+                    <span className="text-4xl sm:text-5xl md:text-6xl font-poppins font-bold whitespace-nowrap">
+                      Avtar
+                    </span>
                   </div>
                 ))}
               </motion.div>
             </div>
             
             {/* Fade effect on edges */}
-            <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[#0a0a0a] to-transparent pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[#0a0a0a] to-transparent pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent pointer-events-none"></div>
           </div>
         </div>
       </section>
