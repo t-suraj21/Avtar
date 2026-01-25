@@ -231,11 +231,15 @@ export default function Home() {
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="aspect-3/4 bg-linear-to-br from-primary/40 via-purple-500/30 to-secondary/40 backdrop-blur-xl p-8 flex flex-col justify-between">
+                <div className="aspect-3/4 bg-linear-to-br from-primary/40 via-purple-500/30 to-secondary/40 backdrop-blur-xl p-8 flex flex-col justify-between relative">
+                  {/* Background Image */}
+                  <div className="absolute inset-0 opacity-20">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Featured Project" className="w-full h-full object-cover" />
+                  </div>
                   {/* Mock Project Display */}
-                  <div className="space-y-4">
-                    <div className="w-full h-48 bg-white/10 rounded-2xl backdrop-blur-sm flex items-center justify-center">
-                      <span className="text-6xl">🎨</span>
+                  <div className="space-y-4 relative z-10">
+                    <div className="w-full h-48 bg-white/10 rounded-2xl backdrop-blur-sm overflow-hidden">
+                      <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Dashboard" className="w-full h-full object-cover" />
                     </div>
                     <div className="space-y-2">
                       <div className="h-4 bg-white/20 rounded w-3/4"></div>
@@ -336,11 +340,24 @@ export default function Home() {
                   <div className={`relative rounded-2xl overflow-hidden group ${
                     index === 2 ? "h-full min-h-100" : "h-80"
                   }`}>
-                    {/* Background */}
-                    <div className="absolute inset-0 bg-linear-to-br from-primary/40 via-purple-500/30 to-secondary/40"></div>
+                    {/* Background Image */}
+                    <div className="absolute inset-0">
+                      <img 
+                        src={[
+                          "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
+                          "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+                          "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=80",
+                          "https://images.unsplash.com/photo-1492619375914-88005aa9e8fb?w=800&q=80",
+                          "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80"
+                        ][index]}
+                        alt={service.title}
+                        className="w-full h-full object-cover opacity-30"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-br from-primary/60 via-purple-500/50 to-secondary/60"></div>
+                    </div>
                     
                     {/* Content */}
-                    <div className="relative h-full p-6 flex flex-col justify-between backdrop-blur-xl border border-white/10">
+                    <div className="relative h-full p-6 flex flex-col justify-between backdrop-blur-sm border border-white/10">
                       <div className="flex-1 flex items-center justify-center">
                         <motion.div 
                           className="text-7xl"
@@ -443,14 +460,32 @@ export default function Home() {
                   <div className="relative rounded-2xl overflow-hidden">
                     {/* Thumbnail Grid */}
                     <div className="grid grid-cols-3 gap-1 mb-2">
-                      {[1, 2, 3].map((i) => (
-                        <div key={i} className="aspect-square bg-linear-to-br from-primary/30 to-secondary/30 rounded-lg"></div>
+                      {[
+                        "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&q=80",
+                        "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=300&q=80",
+                        "https://images.unsplash.com/photo-1533227268428-f9ed0900fb3b?w=300&q=80"
+                      ].map((img, i) => (
+                        <div key={i} className="aspect-square bg-linear-to-br from-primary/30 to-secondary/30 rounded-lg overflow-hidden">
+                          <img src={img} alt={`Thumbnail ${i + 1}`} className="w-full h-full object-cover opacity-60" />
+                        </div>
                       ))}
                     </div>
                     
                     {/* Main Image */}
-                    <div className="aspect-video bg-linear-to-br from-primary/40 via-purple-500/30 to-secondary/40 rounded-2xl mb-4 flex items-center justify-center">
-                      <span className="text-5xl">{project.type === "web" ? "🌐" : project.type === "app" ? "📱" : "🎬"}</span>
+                    <div className="aspect-video bg-linear-to-br from-primary/40 via-purple-500/30 to-secondary/40 rounded-2xl mb-4 overflow-hidden relative">
+                      <img 
+                        src={[
+                          "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&q=80",
+                          "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
+                          "https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=800&q=80",
+                          "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+                          "https://images.unsplash.com/photo-1557838923-2985c318be48?w=800&q=80",
+                          "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80"
+                        ][index]}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                      />
+                      <div className="absolute inset-0 bg-linear-to-t from-black/60 to-transparent"></div>
                     </div>
 
                     {/* Info */}
