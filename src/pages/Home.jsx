@@ -333,16 +333,21 @@ export default function Home() {
               <motion.div
                 key={service.id}
                 variants={itemVariants}
-                whileHover={{ y: -10, scale: 1.02 }}
-                className={index === 2 ? "sm:col-span-2 lg:col-span-1 xl:row-span-2" : ""}
+                whileHover={{ y: -8, scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <Link to={`/services/${service.id}`}>
-                  <div className={`relative rounded-2xl overflow-hidden group ${
-                    index === 2 ? "h-full min-h-100" : "h-80"
-                  }`}>
+                  <motion.div 
+                    className="relative rounded-2xl overflow-hidden group h-80 shadow-lg"
+                    initial={{ opacity: 0, rotateY: -10 }}
+                    whileInView={{ opacity: 1, rotateY: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.1 }}
+                  >
                     {/* Background Image - Full opacity, no color overlay */}
                     <div className="absolute inset-0">
-                      <img 
+                      <motion.img 
                         src={[
                           "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&q=80",
                           "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=800&q=80",
@@ -352,28 +357,59 @@ export default function Home() {
                         ][index]}
                         alt={service.title}
                         className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.4 }}
                       />
                     </div>
                     
                     {/* Text Content - Hidden by default, shown on hover for desktop */}
-                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden lg:flex flex-col justify-center items-center p-6">
-                      <h3 className="text-white font-bold text-2xl mb-3 text-center">{service.title}</h3>
-                      <p className="text-white/90 text-base mb-4 text-center">{service.desc}</p>
-                      <div className="flex flex-wrap gap-2 justify-center">
+                    <motion.div 
+                      className="absolute inset-0 bg-black/85 opacity-0 group-hover:opacity-100 transition-all duration-500 hidden lg:flex flex-col justify-center items-center p-6"
+                      initial={{ y: 20 }}
+                      whileHover={{ y: 0 }}
+                    >
+                      <motion.h3 
+                        className="text-white font-bold text-2xl mb-3 text-center"
+                        initial={{ y: 20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.1 }}
+                      >
+                        {service.title}
+                      </motion.h3>
+                      <motion.p 
+                        className="text-white/90 text-base mb-4 text-center"
+                        initial={{ y: 20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.2 }}
+                      >
+                        {service.desc}
+                      </motion.p>
+                      <motion.div 
+                        className="flex flex-wrap gap-2 justify-center"
+                        initial={{ y: 20, opacity: 0 }}
+                        whileInView={{ y: 0, opacity: 1 }}
+                        transition={{ delay: 0.3 }}
+                      >
                         {service.tools?.slice(0, 3).map((tool, i) => (
-                          <span key={i} className="px-4 py-2 bg-white/20 rounded-full text-sm text-white">
+                          <span key={i} className="px-4 py-2 bg-white/20 rounded-full text-sm text-white backdrop-blur-sm">
                             {tool}
                           </span>
                         ))}
-                      </div>
-                    </div>
-                  </div>
+                      </motion.div>
+                    </motion.div>
+                  </motion.div>
                 </Link>
                 
                 {/* Service Name Below - Mobile Only */}
-                <div className="lg:hidden mt-3 text-center">
+                <motion.div 
+                  className="lg:hidden mt-3 text-center"
+                  initial={{ opacity: 0, y: 10 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 + 0.2 }}
+                >
                   <h3 className="text-white font-bold text-lg">{service.title}</h3>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </motion.div>
