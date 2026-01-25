@@ -442,7 +442,8 @@ export default function Home() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Mobile: Show 2 projects horizontally, Desktop: Show all 6 */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
             {portfolio.slice(0, 6).map((project, index) => (
               <motion.div
                 key={project.id}
@@ -451,25 +452,25 @@ export default function Home() {
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 whileHover={{ y: -8 }}
-                className="group"
+                className={`group ${index >= 2 ? 'hidden md:block' : ''}`}
               >
                 <Link to="/portfolio">
                   <div className="bg-white/2 backdrop-blur-xl border border-white/10 rounded-2xl overflow-hidden hover:border-primary/30 transition-all duration-300">
-                    <div className="aspect-video bg-linear-to-br from-primary/20 to-secondary/20 p-6 flex items-center justify-center">
+                    <div className="aspect-video bg-linear-to-br from-primary/20 to-secondary/20 p-4 md:p-6 flex items-center justify-center">
                       <motion.div
-                        className="text-4xl"
+                        className="text-3xl md:text-4xl"
                         whileHover={{ scale: 1.2, rotate: 10 }}
                         transition={{ duration: 0.3 }}
                       >
                         {project.type === "web" ? "🌐" : project.type === "app" ? "📱" : "🎬"}
                       </motion.div>
                     </div>
-                    <div className="p-6">
-                      <h3 className="text-white font-bold text-lg mb-2">{project.title}</h3>
-                      <p className="text-white/50 text-sm mb-4">{project.description}</p>
+                    <div className="p-4 md:p-6">
+                      <h3 className="text-white font-bold text-base md:text-lg mb-2">{project.title}</h3>
+                      <p className="text-white/50 text-xs md:text-sm mb-3 md:mb-4 line-clamp-2">{project.description}</p>
                       <div className="flex items-center justify-between">
-                        <span className="text-primary text-sm font-medium">{project.type}</span>
-                        <span className="text-white/40 text-sm group-hover:text-primary transition-colors">View →</span>
+                        <span className="text-primary text-xs md:text-sm font-medium">{project.type}</span>
+                        <span className="text-white/40 text-xs md:text-sm group-hover:text-primary transition-colors">View →</span>
                       </div>
                     </div>
                   </div>
@@ -479,14 +480,14 @@ export default function Home() {
           </div>
 
           <motion.div
-            className="text-center mt-12"
+            className="text-center mt-8 md:mt-12"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
           >
             <Link 
               to="/portfolio" 
-              className="inline-block px-8 py-4 bg-linear-to-r from-primary to-secondary rounded-full font-bold text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+              className="inline-block px-6 md:px-8 py-3 md:py-4 bg-linear-to-r from-primary to-secondary rounded-full font-bold text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-sm md:text-base w-full sm:w-auto"
             >
               View All Projects
             </Link>
