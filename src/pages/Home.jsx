@@ -355,24 +355,25 @@ export default function Home() {
                       />
                     </div>
                     
-                    {/* Hover Overlay with Text Content */}
-                    <motion.div 
-                      className="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center items-center p-6 text-center"
-                      initial={{ opacity: 0 }}
-                      whileHover={{ opacity: 1 }}
-                    >
-                      <h3 className="text-white font-bold text-2xl mb-3">{service.title}</h3>
-                      <p className="text-white/90 text-base mb-4 max-w-xs">{service.desc}</p>
+                    {/* Text Content - Hidden by default, shown on hover for desktop */}
+                    <div className="absolute inset-0 bg-black/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 hidden lg:flex flex-col justify-center items-center p-6">
+                      <h3 className="text-white font-bold text-2xl mb-3 text-center">{service.title}</h3>
+                      <p className="text-white/90 text-base mb-4 text-center">{service.desc}</p>
                       <div className="flex flex-wrap gap-2 justify-center">
                         {service.tools?.slice(0, 3).map((tool, i) => (
-                          <span key={i} className="px-4 py-2 bg-white/20 rounded-full text-sm text-white backdrop-blur-sm">
+                          <span key={i} className="px-4 py-2 bg-white/20 rounded-full text-sm text-white">
                             {tool}
                           </span>
                         ))}
                       </div>
-                    </motion.div>
+                    </div>
                   </div>
                 </Link>
+                
+                {/* Service Name Below - Mobile Only */}
+                <div className="lg:hidden mt-3 text-center">
+                  <h3 className="text-white font-bold text-lg">{service.title}</h3>
+                </div>
               </motion.div>
             ))}
           </motion.div>
