@@ -71,7 +71,7 @@ export default function BlogList() {
   };
 
   return (
-    <main className="container-custom py-10 pt-32 md:pt-36 min-h-screen">
+    <main className="container-custom py-6 sm:py-8 md:py-10 pt-24 sm:pt-28 md:pt-32 lg:pt-36 min-h-screen">
       {/* Hero Section */}
       <motion.div 
         initial={{ opacity: 0, y: -30 }}
@@ -94,7 +94,7 @@ export default function BlogList() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-5xl md:text-6xl font-poppins font-bold bg-gradient-to-r from-white via-primary to-secondary bg-clip-text text-transparent"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins font-bold bg-gradient-to-r from-white via-primary to-secondary bg-clip-text text-transparent px-4"
         >
           Our Blog
         </motion.h1>
@@ -181,7 +181,7 @@ export default function BlogList() {
           initial="hidden"
           animate="visible"
           exit="exit"
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8"
         >
           {filteredPosts.map((post, index) => (
             <motion.article

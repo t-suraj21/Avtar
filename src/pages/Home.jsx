@@ -226,7 +226,7 @@ export default function Home() {
       )}
 
       {/* Hero Section - Fullscreen Extraordinary Design */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 md:pt-24 px-4 sm:px-6">
         {/* Animated Gradient Background */}
         <motion.div 
           className="absolute inset-0 bg-gradient-to-br from-primary/20 via-purple-500/10 to-secondary/20"
@@ -317,7 +317,7 @@ export default function Home() {
               {/* Main Headline with 3D Effect */}
               <motion.h1
                 variants={fadeInUp}
-                className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-poppins font-black leading-[1.1] mb-6 md:mb-8"
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-poppins font-black leading-[1.1] mb-4 sm:mb-6 md:mb-8 px-2"
               >
                 <motion.span
                   className="inline-block"
@@ -367,7 +367,7 @@ export default function Home() {
                 >
                   <Link 
                     to="/services" 
-                    className="group relative px-8 md:px-10 py-4 md:py-5 bg-gradient-to-r from-primary to-secondary rounded-full font-bold text-base md:text-lg overflow-hidden shadow-2xl shadow-primary/50"
+                    className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-primary to-secondary rounded-full font-bold text-sm sm:text-base md:text-lg overflow-hidden shadow-2xl shadow-primary/50 w-full sm:w-auto"
                   >
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-secondary to-primary"

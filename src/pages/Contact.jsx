@@ -116,7 +116,7 @@ export default function Contact() {
         }}
       />
 
-      <div className="container-custom py-20 pt-32 md:pt-36 relative z-10">
+      <div className="container-custom py-6 sm:py-12 md:py-16 lg:py-20 pt-24 sm:pt-28 md:pt-32 lg:pt-36 relative z-10">
         {/* Header Section */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

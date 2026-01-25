@@ -127,7 +127,7 @@ export default function About() {
   ];
 
   return (
-    <main className="container-custom py-10 pt-32 md:pt-36 min-h-screen">
+    <main className="container-custom py-6 sm:py-8 md:py-10 pt-24 sm:pt-28 md:pt-32 lg:pt-36 min-h-screen">
       {/* Hero Section */}
       <motion.div
         initial={{ opacity: 0, y: -30 }}
@@ -150,7 +150,7 @@ export default function About() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
-          className="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold bg-gradient-to-r from-white via-primary to-secondary bg-clip-text text-transparent mb-6"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-poppins font-bold bg-gradient-to-r from-white via-primary to-secondary bg-clip-text text-transparent mb-4 sm:mb-6 px-4"
         >
           About Avtar
         </motion.h1>
@@ -171,7 +171,7 @@ export default function About() {
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-20"
+        className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-12 sm:mb-16 md:mb-20"
       >
         {stats.map((stat, index) => (
           <motion.div
