@@ -226,7 +226,7 @@ export default function Home() {
       )}
 
       {/* Hero Section - Fullscreen Extraordinary Design */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-28 md:pt-24 px-4 sm:px-6">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-32 sm:pt-36 md:pt-28 pb-20 px-4 sm:px-6">
         {/* Animated Gradient Background */}
         <motion.div 
           className="absolute inset-0 bg-gradient-to-br from-primary/20 via-purple-500/10 to-secondary/20"
@@ -292,7 +292,7 @@ export default function Home() {
               {/* Floating Badge */}
               <motion.div
                 variants={fadeInUp}
-                className="inline-block mb-6 md:mb-8"
+                className="inline-block mb-6 sm:mb-8 md:mb-8 mt-4 sm:mt-0"
                 whileHover={{ scale: 1.05 }}
               >
                 <motion.div
@@ -359,7 +359,7 @@ export default function Home() {
               {/* CTA Buttons with Magnetic Effect */}
               <motion.div
                 variants={fadeInUp}
-                className="flex flex-wrap gap-4 md:gap-6 justify-center px-4"
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 justify-center px-4 mb-6 sm:mb-0"
               >
                 <motion.div
                   whileHover={{ scale: 1.05 }}
@@ -367,7 +367,7 @@ export default function Home() {
                 >
                   <Link 
                     to="/services" 
-                    className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-primary to-secondary rounded-full font-bold text-sm sm:text-base md:text-lg overflow-hidden shadow-2xl shadow-primary/50 w-full sm:w-auto"
+                    className="group relative px-8 sm:px-8 md:px-10 py-4 sm:py-4 md:py-5 bg-gradient-to-r from-primary to-secondary rounded-full font-bold text-sm sm:text-base md:text-lg overflow-hidden shadow-2xl shadow-primary/50 inline-block text-center"
                   >
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-secondary to-primary"
@@ -393,7 +393,7 @@ export default function Home() {
                 >
                   <Link 
                     to="/portfolio" 
-                    className="group px-8 md:px-10 py-4 md:py-5 border-2 border-white/30 backdrop-blur-xl rounded-full font-bold text-base md:text-lg hover:bg-white/10 transition-all shadow-xl"
+                    className="group px-8 md:px-10 py-4 md:py-5 border-2 border-white/30 backdrop-blur-xl rounded-full font-bold text-sm sm:text-base md:text-lg hover:bg-white/10 transition-all shadow-xl inline-block text-center"
                   >
                     <span className="flex items-center gap-2">
                       View Our Work
@@ -416,7 +416,7 @@ export default function Home() {
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
               variants={containerVariants}
-              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-3 md:gap-4 mt-12 md:mt-20 px-4"
+              className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 md:gap-4 mt-16 sm:mt-20 md:mt-24 px-2 mb-16 sm:mb-0"
             >
               {services.map((service, index) => (
                 <motion.div
@@ -433,7 +433,7 @@ export default function Home() {
                 >
                   <Link to={`/services/${service.id}`}>
                     <motion.div 
-                      className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-6 text-center border border-white/20 group overflow-hidden"
+                      className="relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-xl md:rounded-3xl p-3 sm:p-4 md:p-6 text-center border border-white/20 group overflow-hidden min-h-[100px] sm:min-h-[120px]"
                       whileHover={{
                         boxShadow: "0 20px 60px rgba(99, 102, 241, 0.3)",
                       }}
@@ -447,7 +447,7 @@ export default function Home() {
                       />
                       
                       <motion.div
-                        className="text-3xl md:text-5xl mb-3 md:mb-4 relative z-10"
+                        className="text-2xl sm:text-3xl md:text-5xl mb-2 sm:mb-3 md:mb-4 relative z-10"
                         whileHover={{ 
                           rotate: [0, -10, 10, -10, 0],
                           scale: 1.2,
@@ -456,7 +456,7 @@ export default function Home() {
                       >
                         {service.icon}
                       </motion.div>
-                      <h3 className="font-bold text-xs md:text-sm leading-tight relative z-10">{service.title}</h3>
+                      <h3 className="font-bold text-[10px] sm:text-xs md:text-sm leading-tight relative z-10">{service.title}</h3>
                       
                       {/* Glow Effect */}
                       <motion.div
@@ -477,19 +477,19 @@ export default function Home() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10"
+          className="absolute bottom-6 sm:bottom-10 md:bottom-10 left-1/2 -translate-x-1/2 z-10"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
             transition={{ duration: 1.5, repeat: Infinity }}
             className="flex flex-col items-center gap-2 text-white/60"
           >
-            <span className="text-sm font-medium">Scroll to explore</span>
+            <span className="text-xs sm:text-sm font-medium">Scroll to explore</span>
             <motion.div
-              className="w-6 h-10 border-2 border-white/30 rounded-full p-1"
+              className="w-5 h-8 sm:w-6 sm:h-10 border-2 border-white/30 rounded-full p-1"
             >
               <motion.div
-                className="w-1.5 h-3 bg-white/60 rounded-full mx-auto"
+                className="w-1 h-2 sm:w-1.5 sm:h-3 bg-white/60 rounded-full mx-auto"
                 animate={{ y: [0, 12, 0] }}
                 transition={{ duration: 1.5, repeat: Infinity }}
               />
