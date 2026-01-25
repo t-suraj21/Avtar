@@ -28,7 +28,7 @@ export default function BlogList() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1
+        staggerChildren: 0.06
       }
     }
   };
@@ -36,24 +36,23 @@ export default function BlogList() {
   const cardVariants = {
     hidden: { 
       opacity: 0, 
-      y: 50,
-      scale: 0.9
+      y: 20,
+      scale: 0.95
     },
     visible: { 
       opacity: 1, 
       y: 0,
       scale: 1,
       transition: {
-        type: "spring",
-        stiffness: 100,
-        damping: 15
+        duration: 0.3,
+        ease: "linear"
       }
     },
     exit: {
       opacity: 0,
-      scale: 0.9,
+      scale: 0.95,
       transition: {
-        duration: 0.2
+        duration: 0.15
       }
     }
   };
@@ -74,15 +73,15 @@ export default function BlogList() {
     <main className="container-custom py-6 sm:py-8 md:py-10 pt-24 sm:pt-28 md:pt-32 lg:pt-36 min-h-screen">
       {/* Hero Section */}
       <motion.div 
-        initial={{ opacity: 0, y: -30 }}
+        initial={{ opacity: 0, y: -15 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: "linear" }}
         className="text-center mb-12"
       >
         <motion.div
           initial={{ scale: 0 }}
           animate={{ scale: 1 }}
-          transition={{ delay: 0.2, type: "spring", stiffness: 200 }}
+          transition={{ delay: 0.1, duration: 0.3 }}
           className="inline-block mb-4"
         >
           <div className="w-20 h-20 bg-gradient-to-br from-primary to-secondary rounded-2xl flex items-center justify-center text-4xl shadow-lg shadow-primary/30">
@@ -91,9 +90,9 @@ export default function BlogList() {
         </motion.div>
         
         <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
+          initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3 }}
+          transition={{ delay: 0.2, duration: 0.3 }}
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins font-bold bg-gradient-to-r from-white via-primary to-secondary bg-clip-text text-transparent px-4"
         >
           Our Blog

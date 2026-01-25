@@ -8,17 +8,17 @@ const containerVariants = {
   visible: {
     opacity: 1,
     transition: {
-      staggerChildren: 0.1,
+      staggerChildren: 0.08,
     },
   },
 };
 
 const itemVariants = {
-  hidden: { opacity: 0, y: 50 },
+  hidden: { opacity: 0, y: 20 },
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, ease: [0.4, 0, 0.2, 1] },
+    transition: { duration: 0.4, ease: "linear" },
   },
 };
 
@@ -33,29 +33,25 @@ export default function Services() {
         <motion.div
           className="absolute top-20 left-[10%] w-[600px] h-[600px] bg-primary/20 rounded-full blur-[120px]"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
-            x: [0, 50, 0],
-            y: [0, 30, 0],
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.4, 0.3],
           }}
           transition={{
-            duration: 10,
+            duration: 12,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear",
           }}
         />
         <motion.div
           className="absolute bottom-20 right-[10%] w-[700px] h-[700px] bg-secondary/20 rounded-full blur-[120px]"
           animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.3, 0.5, 0.3],
-            x: [0, -50, 0],
-            y: [0, -30, 0],
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.4, 0.3],
           }}
           transition={{
-            duration: 12,
+            duration: 14,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear",
           }}
         />
         
@@ -69,16 +65,16 @@ export default function Services() {
       <div className="container-custom py-6 sm:py-12 md:py-16 lg:py-20 pt-24 sm:pt-28 md:pt-32 lg:pt-36 relative z-10">
         {/* Hero Section */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-20"
         >
           {/* Floating Badge */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
+            initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
+            transition={{ delay: 0.1, duration: 0.3 }}
             className="inline-block mb-6"
           >
             <motion.div

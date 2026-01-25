@@ -10,25 +10,25 @@ export default function Portfolio() {
         <motion.div
           className="absolute top-20 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.4, 0.3],
           }}
           transition={{
-            duration: 8,
+            duration: 12,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear",
           }}
         />
         <motion.div
           className="absolute bottom-20 -right-20 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]"
           animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
+            scale: [1.1, 1, 1.1],
+            opacity: [0.4, 0.3, 0.4],
           }}
           transition={{
-            duration: 8,
+            duration: 12,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear",
           }}
         />
       </div>
@@ -37,9 +37,9 @@ export default function Portfolio() {
         {/* Hero Section */}
         <motion.div
           className="text-center mb-12 sm:mb-16"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold text-white/80 mb-4">
             Web applications that save the day
@@ -50,16 +50,16 @@ export default function Portfolio() {
             className="w-full max-w-2xl mx-auto h-1 bg-linear-to-r from-red-600 via-red-500 to-red-600 rounded-full"
             initial={{ scaleX: 0 }}
             animate={{ scaleX: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
+            transition={{ delay: 0.3, duration: 0.6 }}
           />
         </motion.div>
 
         {/* Projects Container with Wavy Border */}
         <motion.div
           className="relative"
-          initial={{ opacity: 0, scale: 0.9 }}
+          initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.3, duration: 0.8 }}
+          transition={{ delay: 0.2, duration: 0.5 }}
         >
           {/* Wavy Green Border Background */}
           <div 

@@ -16,6 +16,7 @@
 
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 html, body, #root {
@@ -30,6 +31,30 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  /* Performance optimizations */
+  will-change: scroll-position;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Performance optimizations */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
 
 /* Fix for mobile spacing */
@@ -156,4 +181,25 @@ body {
   [class*="grid"] {
     gap: 0.75rem;
   }
+}
+
+/* GPU Acceleration for animations */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Optimize blur effects */
+[class*="blur-"],
+[class*="backdrop-blur"] {
+  will-change: filter;
+  transform: translateZ(0);
+}
+
+/* Image lazy loading */
+img {
+  loading: lazy;
+  content-visibility: auto;
 }

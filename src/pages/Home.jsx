@@ -38,50 +38,51 @@ export default function Home() {
     <main className="min-h-screen bg-[#0a0a0a] relative overflow-hidden">
       {/* Animated Background - Mobile & Desktop */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        {/* Floating Particles */}
-        {[...Array(20)].map((_, i) => (
+        {/* Reduced particles for better performance */}
+        {[...Array(8)].map((_, i) => (
           <motion.div
             key={i}
             className="absolute w-1 h-1 bg-primary/30 rounded-full"
             initial={{ 
-              x: Math.random() * window.innerWidth, 
-              y: Math.random() * window.innerHeight 
+              x: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1000), 
+              y: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 1000)
             }}
             animate={{
-              y: [null, Math.random() * -200 - 100],
+              y: [null, -200],
               opacity: [0, 1, 0],
             }}
             transition={{
-              duration: Math.random() * 3 + 2,
+              duration: 4,
               repeat: Infinity,
-              delay: Math.random() * 2,
+              delay: i * 0.5,
+              ease: "linear",
             }}
           />
         ))}
 
-        {/* Gradient Orbs */}
+        {/* Gradient Orbs - Optimized */}
         <motion.div
           className="absolute top-20 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            scale: [1, 1.1, 1],
+            opacity: [0.3, 0.4, 0.3],
           }}
           transition={{
-            duration: 8,
+            duration: 10,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear",
           }}
         />
         <motion.div
           className="absolute bottom-20 -right-20 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]"
           animate={{
-            scale: [1.2, 1, 1.2],
-            opacity: [0.5, 0.3, 0.5],
+            scale: [1.1, 1, 1.1],
+            opacity: [0.4, 0.3, 0.4],
           }}
           transition={{
-            duration: 8,
+            duration: 10,
             repeat: Infinity,
-            ease: "easeInOut",
+            ease: "linear",
           }}
         />
       </div>
