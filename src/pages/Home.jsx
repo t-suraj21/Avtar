@@ -244,7 +244,6 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <p className="text-center text-white/40 text-sm mb-8">Partnering with top industry experts</p>
           </motion.div>
           
           {/* Infinite Scrolling Avtar Name */}
