@@ -185,41 +185,92 @@ export default function Home() {
 
               {/* Stats */}
               <motion.div 
-                className="grid grid-cols-2 sm:grid-cols-4 gap-4"
+                className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
               >
                 {stats.map((stat, index) => (
-                  <motion.div key={index} variants={itemVariants} className="text-center sm:text-left">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary mb-1">{stat.value}</div>
-                    <div className="text-xs sm:text-sm text-white/60">{stat.label}</div>
+                  <motion.div 
+                    key={index} 
+                    variants={itemVariants}
+                    whileHover={{ scale: 1.05, y: -5 }}
+                    className="relative group"
+                  >
+                    <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 hover:bg-white/10 transition-all duration-300 overflow-hidden">
+                      <motion.div
+                        className="absolute inset-0 bg-linear-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity"
+                        initial={{ x: '-100%' }}
+                        whileHover={{ x: '100%' }}
+                        transition={{ duration: 0.6 }}
+                      />
+                      <div className="relative z-10">
+                        <motion.div 
+                          className="text-2xl sm:text-3xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent mb-2"
+                          initial={{ scale: 0.5, opacity: 0 }}
+                          animate={{ scale: 1, opacity: 1 }}
+                          transition={{ delay: index * 0.1 + 0.5 }}
+                        >
+                          {stat.value}
+                        </motion.div>
+                        <div className="text-xs sm:text-sm text-white/70 font-medium">{stat.label}</div>
+                      </div>
+                    </div>
                   </motion.div>
                 ))}
               </motion.div>
 
-              {/* Active Users */}
+              {/* Active Clients Showcase */}
               <motion.div 
-                className="mt-8 flex items-center gap-3"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
+                className="mt-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-5 hover:bg-white/10 transition-all duration-300"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.8 }}
+                whileHover={{ scale: 1.02 }}
               >
-                <div className="flex -space-x-3">
-                  {[1, 2, 3, 4].map((i) => (
-                    <div key={i} className="w-10 h-10 rounded-full bg-linear-to-br from-primary to-secondary border-2 border-gray-900 flex items-center justify-center text-lg">
-                      {['👨‍💼', '👩‍💻', '👨‍🎨', '👩‍💼'][i - 1]}
-                    </div>
-                  ))}
+                <div className="flex items-center justify-between">
+                  <div>
+                    <motion.div 
+                      className="text-3xl sm:text-4xl font-bold bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent mb-1"
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      transition={{ delay: 1, type: "spring" }}
+                    >
+                      500+
+                    </motion.div>
+                    <div className="text-white/70 text-sm font-medium">Active Clients Worldwide</div>
+                  </div>
+                  <div className="flex -space-x-2">
+                    {[0, 1, 2, 3].map((i) => (
+                      <motion.div 
+                        key={i}
+                        className="w-10 h-10 rounded-full bg-linear-to-br from-primary to-secondary border-2 border-gray-900"
+                        initial={{ scale: 0, rotate: -180 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        transition={{ delay: 0.9 + i * 0.1, type: "spring" }}
+                        whileHover={{ scale: 1.2, zIndex: 10 }}
+                      />
+                    ))}
+                  </div>
                 </div>
-                <div>
-                  <div className="text-white font-semibold">500+</div>
-                  <div className="text-white/60 text-sm">Active Clients</div>
-                </div>
+                <motion.div 
+                  className="mt-3 h-2 bg-white/10 rounded-full overflow-hidden"
+                  initial={{ width: 0 }}
+                  animate={{ width: "100%" }}
+                  transition={{ delay: 1.2, duration: 0.8 }}
+                >
+                  <motion.div
+                    className="h-full bg-linear-to-r from-primary to-secondary"
+                    initial={{ width: "0%" }}
+                    animate={{ width: "87%" }}
+                    transition={{ delay: 1.4, duration: 1 }}
+                  />
+                </motion.div>
+                <div className="mt-2 text-xs text-white/50">87% satisfaction rate</div>
               </motion.div>
             </motion.div>
 
-            {/* Right Content - Featured Project */}
+            {/* Right Content - Featured Project Showcase */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
@@ -227,59 +278,127 @@ export default function Home() {
               className="relative"
             >
               <motion.div 
-                className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
+                className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10 group"
+                whileHover={{ scale: 1.02, rotateY: 5 }}
+                transition={{ duration: 0.4 }}
               >
-                <div className="aspect-3/4 bg-linear-to-br from-primary/40 via-purple-500/30 to-secondary/40 backdrop-blur-xl p-8 flex flex-col justify-between relative">
-                  {/* Background Image */}
-                  <div className="absolute inset-0 opacity-20">
+                <div className="aspect-3/4 bg-linear-to-br from-primary/20 via-purple-500/20 to-secondary/20 backdrop-blur-xl p-6 flex flex-col justify-between relative">
+                  {/* Background Image with Parallax Effect */}
+                  <motion.div 
+                    className="absolute inset-0 opacity-30"
+                    whileHover={{ scale: 1.1 }}
+                    transition={{ duration: 0.6 }}
+                  >
                     <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80" alt="Featured Project" className="w-full h-full object-cover" />
-                  </div>
-                  {/* Mock Project Display */}
-                  <div className="space-y-4 relative z-10">
-                    <div className="w-full h-48 bg-white/10 rounded-2xl backdrop-blur-sm overflow-hidden">
+                  </motion.div>
+                  
+                  {/* Content */}
+                  <div className="relative z-10 space-y-4">
+                    <motion.div
+                      initial={{ y: 20, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.5 }}
+                    >
+                      <div className="inline-block px-4 py-1 bg-white/10 backdrop-blur-md rounded-full text-xs text-white/70 border border-white/20 mb-4">
+                        Featured Work
+                      </div>
+                    </motion.div>
+                    
+                    <motion.div 
+                      className="w-full h-48 bg-white/10 backdrop-blur-md rounded-2xl overflow-hidden border border-white/20 shadow-xl"
+                      initial={{ y: 30, opacity: 0 }}
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ delay: 0.6 }}
+                      whileHover={{ scale: 1.05 }}
+                    >
                       <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&q=80" alt="Dashboard" className="w-full h-full object-cover" />
-                    </div>
-                    <div className="space-y-2">
-                      <div className="h-4 bg-white/20 rounded w-3/4"></div>
-                      <div className="h-3 bg-white/10 rounded w-1/2"></div>
-                    </div>
+                    </motion.div>
                   </div>
                   
-                  <div className="space-y-4">
-                    <div className="flex items-center justify-between">
-                      <div>
-                        <div className="text-white/60 text-sm mb-1">Featured Project</div>
-                        <div className="text-white font-bold text-xl">E-Commerce Platform</div>
-                      </div>
-                      <div className="text-2xl">💼</div>
+                  <motion.div 
+                    className="space-y-4 relative z-10"
+                    initial={{ y: 30, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.7 }}
+                  >
+                    <div>
+                      <div className="text-white font-bold text-2xl mb-2">E-Commerce Platform</div>
+                      <div className="text-white/70 text-sm">Full-stack solution with modern architecture</div>
                     </div>
-                    <div className="flex gap-2">
-                      <div className="px-4 py-2 bg-white/10 rounded-full text-sm text-white backdrop-blur-sm">React</div>
-                      <div className="px-4 py-2 bg-white/10 rounded-full text-sm text-white backdrop-blur-sm">Node.js</div>
+                    
+                    <div className="flex flex-wrap gap-2">
+                      {['React', 'Node.js', 'MongoDB'].map((tech, i) => (
+                        <motion.div 
+                          key={tech}
+                          className="px-4 py-2 bg-white/10 backdrop-blur-md rounded-full text-sm text-white border border-white/20"
+                          initial={{ scale: 0, rotate: -180 }}
+                          animate={{ scale: 1, rotate: 0 }}
+                          transition={{ delay: 0.8 + i * 0.1, type: "spring" }}
+                          whileHover={{ scale: 1.1, backgroundColor: "rgba(255,255,255,0.2)" }}
+                        >
+                          {tech}
+                        </motion.div>
+                      ))}
                     </div>
-                    <Link to="/portfolio" className="block w-full py-3 bg-white/20 backdrop-blur-xl rounded-full text-center text-white font-semibold hover:bg-white/30 transition-all">
-                      View Project →
+                    
+                    <Link to="/portfolio">
+                      <motion.button 
+                        className="w-full py-3 bg-linear-to-r from-primary to-secondary rounded-full text-center text-white font-semibold shadow-lg overflow-hidden relative"
+                        whileHover={{ scale: 1.05, boxShadow: "0 20px 40px rgba(99, 102, 241, 0.4)" }}
+                        whileTap={{ scale: 0.98 }}
+                      >
+                        <motion.div
+                          className="absolute inset-0 bg-white/20"
+                          initial={{ x: "-100%" }}
+                          whileHover={{ x: "100%" }}
+                          transition={{ duration: 0.5 }}
+                        />
+                        <span className="relative z-10">View Project →</span>
+                      </motion.button>
                     </Link>
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
 
-              {/* Floating Cards */}
+              {/* Floating Accent Cards - No Icons */}
               <motion.div 
-                className="absolute -top-6 -right-6 w-24 h-24 bg-linear-to-br from-primary to-secondary rounded-2xl shadow-xl flex items-center justify-center text-3xl"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 3, repeat: Infinity }}
+                className="absolute -top-6 -right-6 w-24 h-24 bg-linear-to-br from-primary to-secondary rounded-2xl shadow-xl backdrop-blur-xl border border-white/20"
+                animate={{ 
+                  y: [0, -15, 0],
+                  rotate: [0, 5, 0]
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                whileHover={{ scale: 1.1, rotate: 10 }}
               >
-                🚀
+                <div className="w-full h-full flex items-center justify-center">
+                  <motion.div
+                    className="w-12 h-12 border-4 border-white/30 rounded-full"
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+                  />
+                </div>
               </motion.div>
+              
               <motion.div 
-                className="absolute -bottom-6 -left-6 w-20 h-20 bg-linear-to-br from-secondary to-primary rounded-2xl shadow-xl flex items-center justify-center text-2xl"
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+                className="absolute -bottom-6 -left-6 w-20 h-20 bg-linear-to-br from-secondary to-primary rounded-2xl shadow-xl backdrop-blur-xl border border-white/20"
+                animate={{ 
+                  y: [0, 15, 0],
+                  rotate: [0, -5, 0]
+                }}
+                transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 1 }}
+                whileHover={{ scale: 1.1, rotate: -10 }}
               >
-                ✨
+                <div className="w-full h-full flex items-center justify-center">
+                  <motion.div
+                    className="grid grid-cols-2 gap-1 p-2"
+                    animate={{ scale: [1, 1.2, 1] }}
+                    transition={{ duration: 2, repeat: Infinity }}
+                  >
+                    {[0, 1, 2, 3].map((i) => (
+                      <div key={i} className="w-2 h-2 bg-white/40 rounded-sm" />
+                    ))}
+                  </motion.div>
+                </div>
               </motion.div>
             </motion.div>
           </div>
