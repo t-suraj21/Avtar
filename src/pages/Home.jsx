@@ -355,7 +355,7 @@ export default function Home() {
                         <h3 className="text-white font-bold text-xl mb-2">{service.title}</h3>
                         <p className="text-white/70 text-sm mb-4">{service.desc}</p>
                         <div className="flex flex-wrap gap-2">
-                          {service.tools.slice(0, 2).map((tool, i) => (
+                          {service.tools?.slice(0, 2).map((tool, i) => (
                             <span key={i} className="px-3 py-1 bg-white/10 rounded-full text-xs text-white">
                               {tool}
                             </span>
@@ -450,18 +450,18 @@ export default function Home() {
                     
                     {/* Main Image */}
                     <div className="aspect-video bg-linear-to-br from-primary/40 via-purple-500/30 to-secondary/40 rounded-2xl mb-4 flex items-center justify-center">
-                      <span className="text-5xl">{project.category === "web" ? "🌐" : project.category === "app" ? "📱" : "🎬"}</span>
+                      <span className="text-5xl">{project.type === "web" ? "🌐" : project.type === "app" ? "📱" : "🎬"}</span>
                     </div>
 
                     {/* Info */}
                     <div className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4">
                       <div className="flex items-center justify-between mb-2">
                         <h3 className="text-white font-bold">{project.title}</h3>
-                        <span className="text-xs px-2 py-1 bg-primary/20 text-primary rounded-full">{project.category}</span>
+                        <span className="text-xs px-2 py-1 bg-primary/20 text-primary rounded-full">{project.type || project.category || 'web'}</span>
                       </div>
                       <p className="text-white/60 text-sm mb-3">{project.description}</p>
                       <div className="flex items-center justify-between">
-                        <span className="text-white/40 text-xs">{project.tech.slice(0, 2).join(", ")}</span>
+                        <span className="text-white/40 text-xs">{project.tech ? project.tech.slice(0, 2).join(", ") : project.type}</span>
                         <span className="text-primary text-sm font-semibold">View →</span>
                       </div>
                     </div>
