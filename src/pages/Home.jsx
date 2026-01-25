@@ -340,7 +340,7 @@ export default function Home() {
                   <div className={`relative rounded-2xl overflow-hidden group ${
                     index === 2 ? "h-full min-h-100" : "h-80"
                   }`}>
-                    {/* Background Image */}
+                    {/* Background Image - Full opacity, no color overlay */}
                     <div className="absolute inset-0">
                       <img 
                         src={[
@@ -351,40 +351,26 @@ export default function Home() {
                           "https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=800&q=80"
                         ][index]}
                         alt={service.title}
-                        className="w-full h-full object-cover opacity-30"
+                        className="w-full h-full object-cover"
                       />
-                      <div className="absolute inset-0 bg-linear-to-br from-primary/60 via-purple-500/50 to-secondary/60"></div>
                     </div>
                     
-                    {/* Content */}
-                    <div className="relative h-full p-6 flex flex-col justify-between backdrop-blur-sm border border-white/10">
-                      <div className="flex-1 flex items-center justify-center">
-                        <motion.div 
-                          className="text-7xl"
-                          whileHover={{ scale: 1.2, rotate: 10 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          {service.icon}
-                        </motion.div>
-                      </div>
-                      
-                      <div>
-                        <h3 className="text-white font-bold text-xl mb-2">{service.title}</h3>
-                        <p className="text-white/70 text-sm mb-4">{service.desc}</p>
-                        <div className="flex flex-wrap gap-2">
-                          {service.tools?.slice(0, 2).map((tool, i) => (
-                            <span key={i} className="px-3 py-1 bg-white/10 rounded-full text-xs text-white">
-                              {tool}
-                            </span>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Hover Effect */}
+                    {/* Hover Overlay with Text Content */}
                     <motion.div 
-                      className="absolute inset-0 bg-linear-to-t from-primary/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    />
+                      className="absolute inset-0 bg-black/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-center items-center p-6 text-center"
+                      initial={{ opacity: 0 }}
+                      whileHover={{ opacity: 1 }}
+                    >
+                      <h3 className="text-white font-bold text-2xl mb-3">{service.title}</h3>
+                      <p className="text-white/90 text-base mb-4 max-w-xs">{service.desc}</p>
+                      <div className="flex flex-wrap gap-2 justify-center">
+                        {service.tools?.slice(0, 3).map((tool, i) => (
+                          <span key={i} className="px-4 py-2 bg-white/20 rounded-full text-sm text-white backdrop-blur-sm">
+                            {tool}
+                          </span>
+                        ))}
+                      </div>
+                    </motion.div>
                   </div>
                 </Link>
               </motion.div>
