@@ -71,7 +71,7 @@ export default function BlogList() {
   };
 
   return (
-    <main className="container-custom py-10 min-h-screen">
+    <main className="container-custom py-10 pt-32 md:pt-36 min-h-screen">
       {/* Hero Section */}
       <motion.div 
         initial={{ opacity: 0, y: -30 }}

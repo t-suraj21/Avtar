@@ -128,7 +128,7 @@ export default function Home() {
         initial={{ y: -30, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="fixed top-0 left-0 right-0 z-50 w-full px-4 md:px-8 pt-6"
+        className="fixed top-0 left-0 right-0 z-50 w-full px-4 md:px-8 pt-4 md:pt-6"
       >
         <nav className="backdrop-blur-xl bg-white/10 border border-white/20 rounded-full shadow-2xl px-6 md:px-8 py-4 max-w-6xl mx-auto">
           <div className="flex items-center justify-between">
@@ -226,7 +226,7 @@ export default function Home() {
       )}
 
       {/* Hero Section - Fullscreen Extraordinary Design */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden pt-20 md:pt-24">
         {/* Animated Gradient Background */}
         <motion.div 
           className="absolute inset-0 bg-gradient-to-br from-primary/20 via-purple-500/10 to-secondary/20"

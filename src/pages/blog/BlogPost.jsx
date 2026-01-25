@@ -83,7 +83,7 @@ export default function BlogPost() {
         style={{ scaleX }}
       />
 
-      <main className="container-custom py-10 relative">
+      <main className="container-custom py-10 pt-32 md:pt-36 relative">
         <motion.article
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}

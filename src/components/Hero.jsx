@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
-    <section className="relative overflow-hidden py-20">
+    <section className="relative overflow-hidden py-20 pt-32 md:pt-36">
       <div className="absolute inset-0 opacity-60" style={{
         backgroundImage: 'radial-gradient(600px 300px at 10% 10%, rgba(99,102,241,0.2), transparent), radial-gradient(600px 300px at 90% 20%, rgba(34,211,238,0.15), transparent)'
       }} />
