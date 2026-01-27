@@ -64,7 +64,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-purple-50 via-orange-50 to-emerald-50 relative overflow-hidden">
+    <main className={`min-h-screen bg-gradient-to-br ${scrollBg} relative overflow-hidden transition-all duration-1000`}>
       {/* Animated Background - Mobile & Desktop */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {/* Reduced particles for better performance */}
