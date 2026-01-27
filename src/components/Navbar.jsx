@@ -74,7 +74,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -10 }}
-          className="md:hidden backdrop-blur-xl bg-white/90 border border-primary/10 rounded-2xl overflow-hidden mt-2 shadow-xl max-w-6xl mx-auto">
+          className="md:hidden backdrop-blur-xl bg-white/90 border border-primary/10 rounded-2xl overflow-hidden mt-2 shadow-xl max-w-6xl mx-auto"
         >
           <div className="px-3 py-3 flex flex-col gap-1.5">
             <NavLink onClick={() => setMobileMenuOpen(false)} to="/" className={navLinkClass}>Home</NavLink>
