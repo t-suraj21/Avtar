@@ -8,8 +8,8 @@ export default function Navbar() {
   const navLinkClass = ({ isActive }) =>
     `px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
       isActive 
-        ? "bg-white/20 text-white shadow-lg" 
-        : "text-white/70 hover:text-white hover:bg-white/10"
+        ? "bg-white/15 text-[#E8E8E8] shadow-lg" 
+        : "text-[#94A3B8] hover:text-[#E8E8E8] hover:bg-white/10"
     }`;
 
   return (
@@ -24,9 +24,9 @@ export default function Navbar() {
           {/* Logo */}
           <NavLink to="/" className="flex items-center gap-2 group">
             <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-              <span className="text-white font-bold text-xl">A</span>
+              <span className="text-[#E8E8E8] font-bold text-xl">A</span>
             </div>
-            <span className="text-xl font-poppins font-bold text-white">Avtar</span>
+            <span className="text-xl font-poppins font-bold text-[#E8E8E8]">Avtar</span>
           </NavLink>
 
           {/* Nav Links - Desktop */}
@@ -43,7 +43,7 @@ export default function Navbar() {
           <div className="hidden md:flex items-center gap-3">
             <NavLink 
               to="/contact" 
-              className="px-6 py-2.5 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all text-sm"
+              className="px-6 py-2.5 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold text-[#FFFFFF] shadow-lg hover:shadow-xl hover:scale-105 transition-all text-sm"
             >
               Get Started
             </NavLink>
@@ -56,11 +56,11 @@ export default function Navbar() {
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? (
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-[#E8E8E8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
               </svg>
             ) : (
-              <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg className="w-6 h-6 text-[#E8E8E8]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
             )}
@@ -86,7 +86,7 @@ export default function Navbar() {
             <NavLink 
               onClick={() => setMobileMenuOpen(false)} 
               to="/contact" 
-              className="mt-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold text-white text-center shadow-lg"
+              className="mt-2 px-6 py-3 bg-gradient-to-r from-primary to-secondary rounded-full font-semibold text-[#FFFFFF] text-center shadow-lg"
             >
               Get Started
             </NavLink>

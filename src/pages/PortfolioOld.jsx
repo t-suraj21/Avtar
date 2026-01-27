@@ -169,7 +169,7 @@ export default function Portfolio() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.8 }}
-            className="text-xl md:text-2xl text-white/70 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl md:text-2xl text-[#94A3B8] max-w-4xl mx-auto leading-relaxed"
           >
             Selected works across web, apps, video and content. Each project tells a unique story of innovation and excellence.
           </motion.p>

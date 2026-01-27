@@ -12,8 +12,8 @@ export default function Home() {
   const navLinkClass = ({ isActive }) =>
     `px-5 py-2.5 rounded-full text-sm font-medium transition-all duration-300 ${
       isActive 
-        ? "bg-white/20 text-white shadow-lg" 
-        : "text-white/70 hover:text-white hover:bg-white/10"
+        ? "bg-white/15 text-[#E8E8E8] shadow-lg" 
+        : "text-[#94A3B8] hover:text-[#E8E8E8] hover:bg-white/10"
     }`;
 
   // Trusted brands/partners
@@ -35,7 +35,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#0a0a0a] relative overflow-hidden">
+    <main className="min-h-screen bg-[#1A1A1A] relative overflow-hidden">
       {/* Animated Background - Mobile & Desktop */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {/* Reduced particles for better performance */}
@@ -98,9 +98,9 @@ export default function Home() {
           <div className="flex items-center justify-between">
             <NavLink to="/" className="flex items-center gap-2 group">
               <div className="w-10 h-10 bg-linear-to-br from-primary to-secondary rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                <span className="text-white font-bold text-xl">A</span>
+                <span className="text-[#E8E8E8] font-bold text-xl">A</span>
               </div>
-              <span className="text-xl font-poppins font-bold text-white">Avtar</span>
+              <span className="text-xl font-poppins font-bold text-[#E8E8E8]">Avtar</span>
             </NavLink>
 
             <div className="hidden lg:flex items-center gap-2">
@@ -113,7 +113,7 @@ export default function Home() {
             </div>
 
             <div className="hidden lg:flex items-center gap-3">
-              <Link to="/contact" className="px-6 py-2.5 bg-linear-to-r from-primary to-secondary rounded-full font-semibold text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all text-sm">
+              <Link to="/contact" className="px-6 py-2.5 bg-linear-to-r from-primary to-secondary rounded-full font-semibold text-[#FFFFFF] shadow-lg hover:shadow-xl hover:scale-105 transition-all text-sm">
                 Get Started
               </Link>
             </div>
@@ -140,7 +140,7 @@ export default function Home() {
               <NavLink onClick={() => setMobileMenuOpen(false)} to="/blog" className={navLinkClass}>Blog</NavLink>
               <NavLink onClick={() => setMobileMenuOpen(false)} to="/about" className={navLinkClass}>About</NavLink>
               <NavLink onClick={() => setMobileMenuOpen(false)} to="/contact" className={navLinkClass}>Contact</NavLink>
-              <Link onClick={() => setMobileMenuOpen(false)} to="/contact" className="mt-2 px-6 py-3 bg-linear-to-r from-primary to-secondary rounded-full font-semibold text-white text-center">
+              <Link onClick={() => setMobileMenuOpen(false)} to="/contact" className="mt-2 px-6 py-3 bg-linear-to-r from-primary to-secondary rounded-full font-semibold text-[#FFFFFF] text-center">
                 Get Started
               </Link>
             </div>
@@ -168,13 +168,13 @@ export default function Home() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            <span className="text-white">Transform Your Vision Into</span>
+            <span className="text-[#E8E8E8]">Transform Your Vision Into</span>
             <br />
             <span className="text-primary">Actionable Solutions</span>
           </motion.h1>
 
           <motion.p 
-            className="text-white/60 text-base sm:text-lg md:text-xl mb-10 max-w-3xl mx-auto"
+            className="text-[#94A3B8] text-base sm:text-lg md:text-xl mb-10 max-w-3xl mx-auto"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.8 }}
@@ -190,13 +190,13 @@ export default function Home() {
           >
             <Link 
               to="/services" 
-              className="px-8 py-4 bg-primary hover:bg-primary/90 rounded-full font-bold text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center w-full sm:w-auto"
+              className="px-8 py-4 bg-primary hover:bg-primary/90 rounded-full font-bold text-[#FFFFFF] shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-center w-full sm:w-auto"
             >
               Discover Services
             </Link>
             <Link 
               to="/contact" 
-              className="px-8 py-4 border-2 border-white/20 hover:border-white/40 rounded-full font-bold text-white hover:bg-white/5 transition-all text-center backdrop-blur-xl w-full sm:w-auto"
+              className="px-8 py-4 border-2 border-white/20 hover:border-white/40 rounded-full font-bold text-[#E8E8E8] hover:bg-white/5 transition-all text-center backdrop-blur-xl w-full sm:w-auto"
             >
               Talk to Sales
             </Link>
@@ -267,7 +267,7 @@ export default function Home() {
                 {[...Array(12)].map((_, index) => (
                   <div
                     key={index}
-                    className="flex-shrink-0 text-white/20 hover:text-white/60 transition-all duration-300 cursor-default"
+                    className="flex-shrink-0 text-[#2A2A2A] hover:text-[#94A3B8] transition-all duration-300 cursor-default"
                   >
                     <span className="text-4xl sm:text-5xl md:text-6xl font-poppins font-bold whitespace-nowrap">
                       Avtar
@@ -278,8 +278,8 @@ export default function Home() {
             </div>
             
             {/* Fade effect on edges */}
-            <div className="absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-[#1A1A1A] to-transparent pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-[#1A1A1A] to-transparent pointer-events-none"></div>
           </div>
         </div>
       </section>
@@ -297,10 +297,10 @@ export default function Home() {
               Take Full Control of Your Project
             </div>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-4">
-              <span className="text-white">Business </span>
+              <span className="text-[#E8E8E8]">Business </span>
               <span className="text-primary">Application</span>
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
+            <p className="text-[#94A3B8] max-w-2xl mx-auto">
               Our clients love how Avtar simplifies their processes and streamlines operations
             </p>
           </motion.div>
@@ -321,8 +321,8 @@ export default function Home() {
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                       <div className="w-6 h-6 border-2 border-primary rounded"></div>
                     </div>
-                    <h3 className="text-white font-bold text-xl mb-3">{service.title}</h3>
-                    <p className="text-white/50 text-sm leading-relaxed">{service.desc}</p>
+                    <h3 className="text-[#E8E8E8] font-bold text-xl mb-3">{service.title}</h3>
+                    <p className="text-[#94A3B8] text-sm leading-relaxed">{service.desc}</p>
                   </div>
                 </Link>
               </motion.div>
@@ -337,7 +337,7 @@ export default function Home() {
           >
             <Link 
               to="/services" 
-              className="inline-block px-8 py-4 border-2 border-white/20 hover:border-primary rounded-full font-semibold text-white hover:bg-white/5 transition-all"
+              className="inline-block px-8 py-4 border-2 border-white/20 hover:border-primary rounded-full font-semibold text-[#E8E8E8] hover:bg-white/5 transition-all"
             >
               View All Services →
             </Link>
@@ -360,23 +360,23 @@ export default function Home() {
                 Data Insights
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-6">
-                <span className="text-white">Improved </span>
+                <span className="text-[#E8E8E8]">Improved </span>
                 <span className="text-primary">decision-making</span>
               </h2>
-              <p className="text-white/50 mb-8 leading-relaxed">
+              <p className="text-[#94A3B8] mb-8 leading-relaxed">
                 By leveraging real-time insights and comprehensive data analysis, you can make informed decisions with confidence, reducing uncertainty.
               </p>
 
               <div className="space-y-6">
                 <div>
-                  <h4 className="text-white font-semibold mb-2">Comprehensive Data Visualization</h4>
-                  <p className="text-white/40 text-sm">
+                  <h4 className="text-[#E8E8E8] font-semibold mb-2">Comprehensive Data Visualization</h4>
+                  <p className="text-[#7A8A99] text-sm">
                     Our advanced visualization tools turn complex datasets into easy-to-understand charts, graphs, and dashboards.
                   </p>
                 </div>
                 <div>
-                  <h4 className="text-white font-semibold mb-2">Predictive Modeling</h4>
-                  <p className="text-white/40 text-sm">
+                  <h4 className="text-[#E8E8E8] font-semibold mb-2">Predictive Modeling</h4>
+                  <p className="text-[#7A8A99] text-sm">
                     Leverage cutting-edge predictive analytics to forecast future trends and outcomes.
                   </p>
                 </div>
@@ -393,8 +393,8 @@ export default function Home() {
             >
               <div className="bg-white/2 backdrop-blur-xl border border-white/10 rounded-2xl p-6 sm:p-8">
                 <div className="flex items-center justify-between mb-6">
-                  <h3 className="text-white font-semibold">Improved decision-making</h3>
-                  <div className="text-white/40 text-sm">Last 6 months</div>
+                  <h3 className="text-[#E8E8E8] font-semibold">Improved decision-making</h3>
+                  <div className="text-[#94A3B8] text-sm">Last 6 months</div>
                 </div>
 
                 {/* Bar Chart Simulation */}
@@ -409,7 +409,7 @@ export default function Home() {
                       transition={{ delay: i * 0.1, duration: 0.6 }}
                     >
                       <div className="w-full h-full bg-linear-to-t from-primary to-primary/40 rounded-t-lg group-hover:from-primary group-hover:to-primary/60 transition-all cursor-pointer"></div>
-                      <div className="absolute -bottom-6 left-0 right-0 text-center text-white/40 text-xs">
+                      <div className="absolute -bottom-6 left-0 right-0 text-center text-[#94A3B8] text-xs">
                         M{i + 1}
                       </div>
                     </motion.div>
@@ -420,7 +420,7 @@ export default function Home() {
                 <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between text-sm">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 bg-primary rounded-sm"></div>
-                    <span className="text-white/60">Success Rate</span>
+                    <span className="text-[#94A3B8]">Success Rate</span>
                   </div>
                   <motion.div 
                     className="text-primary font-bold text-2xl"
@@ -448,10 +448,10 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-4">
-              <span className="text-white">Recent </span>
+              <span className="text-[#E8E8E8]">Recent </span>
               <span className="text-primary">Projects</span>
             </h2>
-            <p className="text-white/50 max-w-2xl mx-auto">
+            <p className="text-[#94A3B8] max-w-2xl mx-auto">
               Explore our latest work and see how we've helped businesses transform their digital presence
             </p>
           </motion.div>
@@ -480,11 +480,11 @@ export default function Home() {
                       </motion.div>
                     </div>
                     <div className="p-4 md:p-6">
-                      <h3 className="text-white font-bold text-base md:text-lg mb-2">{project.title}</h3>
-                      <p className="text-white/50 text-xs md:text-sm mb-3 md:mb-4 line-clamp-2">{project.description}</p>
+                      <h3 className="text-[#E8E8E8] font-bold text-base md:text-lg mb-2">{project.title}</h3>
+                      <p className="text-[#94A3B8] text-xs md:text-sm mb-3 md:mb-4 line-clamp-2">{project.description}</p>
                       <div className="flex items-center justify-between">
                         <span className="text-primary text-xs md:text-sm font-medium">{project.type}</span>
-                        <span className="text-white/40 text-xs md:text-sm group-hover:text-primary transition-colors">View →</span>
+                        <span className="text-[#94A3B8] text-xs md:text-sm group-hover:text-primary transition-colors">View →</span>
                       </div>
                     </div>
                   </div>
@@ -501,7 +501,7 @@ export default function Home() {
           >
             <Link 
               to="/portfolio" 
-              className="inline-block px-6 md:px-8 py-3 md:py-4 bg-linear-to-r from-primary to-secondary rounded-full font-bold text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-sm md:text-base w-full sm:w-auto"
+              className="inline-block px-6 md:px-8 py-3 md:py-4 bg-linear-to-r from-primary to-secondary rounded-full font-bold text-[#FFFFFF] shadow-xl hover:shadow-2xl hover:scale-105 transition-all text-sm md:text-base w-full sm:w-auto"
             >
               View All Projects
             </Link>
@@ -518,22 +518,22 @@ export default function Home() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-6 text-white">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-6 text-[#E8E8E8]">
               Ready to Transform Your Business?
             </h2>
-            <p className="text-white/60 text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
+            <p className="text-[#94A3B8] text-lg sm:text-xl mb-8 max-w-2xl mx-auto">
               Join hundreds of satisfied clients who transformed their digital presence with Avtar. Let's create something extraordinary together.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
                 to="/contact" 
-                className="px-8 py-4 bg-primary hover:bg-primary/90 rounded-full font-bold text-white shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+                className="px-8 py-4 bg-primary hover:bg-primary/90 rounded-full font-bold text-[#FFFFFF] shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
               >
                 Start Your Project
               </Link>
               <Link 
                 to="/services" 
-                className="px-8 py-4 border-2 border-white/20 hover:border-white/40 rounded-full font-bold text-white hover:bg-white/5 transition-all backdrop-blur-xl"
+                className="px-8 py-4 border-2 border-white/20 hover:border-white/40 rounded-full font-bold text-[#E8E8E8] hover:bg-white/5 transition-all backdrop-blur-xl"
               >
                 Explore Services
               </Link>

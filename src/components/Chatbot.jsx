@@ -97,7 +97,7 @@ export default function Chatbot() {
               </div>
               <div>
                 <h3 className="font-semibold">AI Assistant</h3>
-                <p className="text-xs text-white/60">Online</p>
+                <p className="text-xs text-[#94A3B8]">Online</p>
               </div>
             </div>
 
@@ -111,8 +111,8 @@ export default function Chatbot() {
                   <div
                     className={`max-w-[80%] rounded-lg px-4 py-2 ${
                       msg.sender === "user"
-                        ? "bg-primary text-white"
-                        : "bg-white/10 text-white/90"
+                        ? "bg-primary text-[#FFFFFF]"
+                        : "bg-white/10 text-[#E8E8E8]"
                     }`}
                   >
                     <p className="text-sm">{msg.text}</p>

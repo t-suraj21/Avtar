@@ -12,7 +12,7 @@ export default function CTA() {
           className="card-glass p-8 text-center"
         >
           <h2 className="text-2xl sm:text-3xl font-poppins font-semibold">Ready to Build Something Great?</h2>
-          <p className="mt-2 text-white/70">Let’s turn your idea into a launch-ready product.</p>
+          <p className="mt-2 text-[#94A3B8]">Let's turn your idea into a launch-ready product.</p>
           <div className="mt-6 flex gap-3 justify-center">
             <Link to="/contact" className="btn-primary">Get Started</Link>
             <Link to="/portfolio" className="btn-secondary">See Portfolio</Link>

@@ -28,7 +28,7 @@ export default function ServiceDetails() {
         ].map((step, i) => (
           <div key={i} className="card-glass p-6">
             <h3 className="font-semibold">{step.title}</h3>
-            <p className="text-white/70 mt-1">{step.desc}</p>
+            <p className="text-[#94A3B8] mt-1">{step.desc}</p>
           </div>
         ))}
       </section>

@@ -159,7 +159,7 @@ export default function About() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
-          className="text-xl text-white/70 max-w-3xl mx-auto leading-relaxed"
+          className="text-xl text-[#94A3B8] max-w-3xl mx-auto leading-relaxed"
         >
           We're a creative digital agency transforming ideas into exceptional digital experiences through innovative development, stunning design, and compelling content.
         </motion.p>
@@ -199,7 +199,7 @@ export default function About() {
             >
               {stat.number}
             </motion.div>
-            <div className="text-white/70 text-sm relative z-10">{stat.label}</div>
+            <div className="text-[#94A3B8] text-sm relative z-10">{stat.label}</div>
           </motion.div>
         ))}
       </motion.div>
@@ -224,7 +224,7 @@ export default function About() {
           <h2 className="text-4xl font-poppins font-bold text-center mb-6 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
             Our Story
           </h2>
-          <div className="max-w-4xl mx-auto space-y-4 text-lg text-white/80 leading-relaxed">
+          <div className="max-w-4xl mx-auto space-y-4 text-lg text-[#B8C5D0] leading-relaxed">
             <p>
               Avtar was born from a simple belief: <span className="text-primary font-semibold">exceptional digital experiences shouldn't be a luxury—they should be the standard</span>. We started as a small team of passionate developers and creators who saw the gap between what businesses needed and what traditional agencies were offering.
             </p>
@@ -255,7 +255,7 @@ export default function About() {
             <span>💎</span>
             <span>Our Core Values</span>
           </h2>
-          <p className="text-white/70 text-lg">The principles that guide everything we do</p>
+          <p className="text-[#94A3B8] text-lg">The principles that guide everything we do</p>
         </motion.div>
 
         <motion.div
@@ -291,7 +291,7 @@ export default function About() {
                 {value.title}
               </h3>
               
-              <p className="text-white/70 leading-relaxed relative z-10">
+              <p className="text-[#94A3B8] leading-relaxed relative z-10">
                 {value.description}
               </p>
 
@@ -324,7 +324,7 @@ export default function About() {
             <span>👥</span>
             <span>Meet Our Teams</span>
           </h2>
-          <p className="text-white/70 text-lg">Talented specialists working together to bring your vision to life</p>
+          <p className="text-[#94A3B8] text-lg">Talented specialists working together to bring your vision to life</p>
         </motion.div>
 
         <motion.div
@@ -357,7 +357,7 @@ export default function About() {
                 {member.name}
               </h3>
               
-              <p className="text-sm text-white/60 mb-4 relative z-10">
+              <p className="text-sm text-[#94A3B8] mb-4 relative z-10">
                 {member.role}
               </p>
               
@@ -369,7 +369,7 @@ export default function About() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * idx }}
-                    className="px-3 py-1 bg-white/5 rounded-full text-xs text-white/70 border border-white/10"
+                    className="px-3 py-1 bg-white/5 rounded-full text-xs text-[#94A3B8] border border-white/10"
                   >
                     {skill}
                   </motion.span>
@@ -397,7 +397,7 @@ export default function About() {
             <span>🚀</span>
             <span>Our Journey</span>
           </h2>
-          <p className="text-white/70 text-lg">Milestones that shaped who we are today</p>
+          <p className="text-[#94A3B8] text-lg">Milestones that shaped who we are today</p>
         </motion.div>
 
         <div className="max-w-4xl mx-auto relative">
@@ -428,7 +428,7 @@ export default function About() {
                   <div className="card-glass p-6 bg-gradient-to-br from-white/5 to-white/0">
                     <div className="text-2xl font-bold text-primary mb-2">{item.year}</div>
                     <h3 className="text-xl font-semibold mb-2">{item.event}</h3>
-                    <p className="text-white/70">{item.description}</p>
+                    <p className="text-[#94A3B8]">{item.description}</p>
                   </div>
                 </motion.div>
               </motion.div>
@@ -524,7 +524,7 @@ export default function About() {
               🎯
             </motion.div>
             <h3 className="text-2xl font-bold mb-4 text-primary">Our Mission</h3>
-            <p className="text-white/80 leading-relaxed">
+            <p className="text-[#B8C5D0] leading-relaxed">
               To democratize exceptional digital experiences by making high-quality development, design, and content services accessible to businesses of all sizes. We're committed to turning your ideas into reality with speed, precision, and creativity.
             </p>
           </motion.div>
@@ -541,7 +541,7 @@ export default function About() {
               🔮
             </motion.div>
             <h3 className="text-2xl font-bold mb-4 text-secondary">Our Vision</h3>
-            <p className="text-white/80 leading-relaxed">
+            <p className="text-[#B8C5D0] leading-relaxed">
               To become the go-to digital partner for ambitious brands worldwide, known for our rapid execution, innovative solutions, and unwavering commitment to client success. We envision a future where every business has the digital presence it deserves.
             </p>
           </motion.div>
@@ -599,7 +599,7 @@ export default function About() {
           Ready to Build Something Amazing?
         </h2>
         
-        <p className="text-xl text-white/70 mb-8 max-w-2xl mx-auto relative z-10">
+        <p className="text-xl text-[#94A3B8] mb-8 max-w-2xl mx-auto relative z-10">
           Let's transform your vision into reality. Whether it's a website, mobile app, or video content, we're here to make it happen.
         </p>
         

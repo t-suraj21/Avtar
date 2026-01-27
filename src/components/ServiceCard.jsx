@@ -11,7 +11,7 @@ export default function ServiceCard({ id, title, desc, icon }) {
         <div className="text-2xl">{icon}</div>
         <div>
           <h3 className="font-semibold text-lg">{title}</h3>
-          <p className="text-white/70 mt-1">{desc}</p>
+          <p className="text-[#94A3B8] mt-1">{desc}</p>
         </div>
       </div>
       <div className="mt-4 flex gap-2">

@@ -20,7 +20,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.1, duration: 0.6 }}
-          className="mt-4 text-white/80 max-w-2xl"
+          className="mt-4 text-[#B8C5D0] max-w-2xl"
         >
           Full-stack development, app building, and content/video services to grow your brand with speed and quality.
         </motion.p>

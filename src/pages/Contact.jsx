@@ -136,7 +136,7 @@ export default function Contact() {
               Something Amazing
             </span>
           </h1>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">
+          <p className="text-xl text-[#94A3B8] max-w-2xl mx-auto">
             Have a project in mind? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
           </p>
         </motion.div>
