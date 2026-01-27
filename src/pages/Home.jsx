@@ -35,7 +35,7 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-[#FAF9F6] relative overflow-hidden">
+    <main className="min-h-screen bg-gradient-to-br from-purple-50 via-orange-50 to-emerald-50 relative overflow-hidden">
       {/* Animated Background - Mobile & Desktop */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {/* Reduced particles for better performance */}
@@ -278,8 +278,8 @@ export default function Home() {
             </div>
             
             {/* Fade effect on edges */}
-            <div className="absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-[#FAF9F6] to-transparent pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-[#FAF9F6] to-transparent pointer-events-none"></div>
+            <div className="absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-purple-50 to-transparent pointer-events-none"></div>
+            <div className="absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-purple-50 to-transparent pointer-events-none"></div>
           </div>
         </div>
       </section>
@@ -317,7 +317,7 @@ export default function Home() {
                 className="group"
               >
                 <Link to={`/services/${service.id}`}>
-                  <div className="bg-white backdrop-blur-xl border border-primary/10 rounded-2xl p-6 sm:p-8 hover:border-primary/30 hover:shadow-xl transition-all duration-300 h-full">
+                  <div className="bg-white/70 backdrop-blur-xl border border-primary/15 rounded-2xl p-6 sm:p-8 hover:border-primary/40 hover:shadow-2xl transition-all duration-300 h-full">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-6 group-hover:bg-primary/20 transition-colors">
                       <div className="w-6 h-6 border-2 border-primary rounded"></div>
                     </div>
@@ -469,7 +469,7 @@ export default function Home() {
                 className={`group ${index >= 2 ? 'hidden md:block' : ''}`}
               >
                 <Link to="/portfolio">
-                  <div className="bg-white border border-primary/10 rounded-2xl overflow-hidden hover:border-primary/30 hover:shadow-xl transition-all duration-300 h-full">
+                  <div className="bg-white/70 backdrop-blur-xl border border-primary/15 rounded-2xl overflow-hidden hover:border-primary/40 hover:shadow-2xl transition-all duration-300 h-full">
                     {project.image ? (
                       <div className="aspect-video overflow-hidden relative group">
                         <img 
