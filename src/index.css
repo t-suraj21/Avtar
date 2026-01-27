@@ -25,9 +25,8 @@ html, body, #root {
 }
 
 body {
-  background: linear-gradient(135deg, #F5F3FF 0%, #FFF7ED 50%, #F0FDF4 100%);
-  background-attachment: fixed;
-  color: #2C2C2C;
+  background: #1a1a2e;
+  color: #ffffff;
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -94,17 +93,17 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
-  background-color: #7C3AED;
+  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
   color: #FFFFFF;
   padding: 0.5rem 1rem;
   font-weight: 500;
-  box-shadow: 0 4px 12px 0 rgba(124, 58, 237, 0.3);
+  box-shadow: 0 4px 12px 0 rgba(249, 115, 22, 0.4);
   transition: all 0.3s;
 }
 
 .btn-primary:hover {
-  background-color: #6D28D9;
-  box-shadow: 0 8px 20px 0 rgba(124, 58, 237, 0.4);
+  background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
+  box-shadow: 0 8px 20px 0 rgba(249, 115, 22, 0.6);
   transform: translateY(-2px);
 }
 
@@ -128,11 +127,11 @@ img {
 }
 
 .card-glass {
-  background-color: rgb(255 255 255 / 0.7);
+  background-color: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(20px);
-  border: 1px solid rgb(124 58 237 / 0.15);
+  border: 1px solid rgba(249, 115, 22, 0.2);
   border-radius: 0.75rem;
-  box-shadow: 0 10px 30px -5px rgba(124, 58, 237, 0.2);
+  box-shadow: 0 10px 30px -5px rgba(249, 115, 22, 0.3);
 }
 
 /* Mobile optimizations */
