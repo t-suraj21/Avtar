@@ -123,7 +123,7 @@ export default function Home() {
         transition={{ duration: 0.6 }}
         className="fixed top-0 left-0 right-0 z-50 w-full px-3 sm:px-4 md:px-8 pt-3 sm:pt-4 md:pt-6"
       >
-        <nav className="backdrop-blur-xl bg-white/5 border border-white/10 rounded-full shadow-2xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 max-w-7xl mx-auto">
+        <nav className="backdrop-blur-xl bg-black/40 border border-orange-500/20 rounded-full shadow-2xl px-4 sm:px-6 md:px-8 py-3 sm:py-4 max-w-7xl mx-auto">
           <div className="flex items-center justify-between">
             <NavLink to="/" className="flex items-center gap-2 group">
               <div className="w-10 h-10 bg-gradient-to-br from-orange-500 to-orange-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
@@ -149,7 +149,7 @@ export default function Home() {
 
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)} 
-              className="lg:hidden w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center"
+              className="lg:hidden w-10 h-10 rounded-full bg-orange-500/20 hover:bg-orange-500/30 flex items-center justify-center"
             >
               {mobileMenuOpen ? "✕" : "☰"}
             </button>
@@ -160,7 +160,7 @@ export default function Home() {
           <motion.div 
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            className="lg:hidden backdrop-blur-xl bg-white/5 border border-white/10 rounded-2xl mt-2 shadow-xl max-w-7xl mx-auto"
+            className="lg:hidden backdrop-blur-xl bg-black/40 border border-orange-500/20 rounded-2xl mt-2 shadow-xl max-w-7xl mx-auto"
           >
             <div className="px-3 py-3 flex flex-col gap-1.5">
               <NavLink onClick={() => setMobileMenuOpen(false)} to="/" className={navLinkClass}>Home</NavLink>
@@ -265,7 +265,7 @@ export default function Home() {
       </section>
 
       {/* Avtar Name Scroller Section */}
-      <section className="py-12 sm:py-16 px-4 border-y border-white/5 bg-white/2 overflow-hidden">
+      <section className="py-12 sm:py-16 px-4 border-y border-orange-500/10 bg-black/20 overflow-hidden">
         <div className="container-custom max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -346,7 +346,7 @@ export default function Home() {
                 className="group"
               >
                 <Link to={`/services/${service.id}`}>
-                  <div className="bg-white/5 backdrop-blur-xl border border-orange-500/20 rounded-2xl p-6 sm:p-8 hover:border-orange-500/50 hover:bg-white/10 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 h-full">
+                  <div className="bg-black/30 backdrop-blur-xl border border-orange-500/20 rounded-2xl p-6 sm:p-8 hover:border-orange-500/50 hover:bg-black/40 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 h-full">
                     <div className="w-12 h-12 bg-orange-500/20 rounded-lg flex items-center justify-center mb-6 group-hover:bg-orange-500/30 transition-colors">
                       <div className="w-6 h-6 border-2 border-orange-500 rounded"></div>
                     </div>
@@ -375,7 +375,7 @@ export default function Home() {
       </section>
 
       {/* Stats/Impact Section - Hidden on Mobile */}
-      <section className="hidden md:block py-16 sm:py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-white/2">
+      <section className="hidden md:block py-16 sm:py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-black/20">
         <div className="container-custom max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left - Content */}
@@ -420,7 +420,7 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               className="relative"
             >
-              <div className="bg-white/2 backdrop-blur-xl border border-white/10 rounded-2xl p-6 sm:p-8">
+              <div className="bg-black/30 backdrop-blur-xl border border-orange-500/20 rounded-2xl p-6 sm:p-8">
                 <div className="flex items-center justify-between mb-6">
                   <h3 className="text-[#E8E8E8] font-semibold">Improved decision-making</h3>
                   <div className="text-[#94A3B8] text-sm">Last 6 months</div>
@@ -498,7 +498,7 @@ export default function Home() {
                 className={`group ${index >= 2 ? 'hidden md:block' : ''}`}
               >
                 <Link to="/portfolio">
-                  <div className="bg-white/5 backdrop-blur-xl border border-orange-500/20 rounded-2xl overflow-hidden hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 h-full">
+                  <div className="bg-black/30 backdrop-blur-xl border border-orange-500/20 rounded-2xl overflow-hidden hover:border-orange-500/50 hover:shadow-2xl hover:shadow-orange-500/20 transition-all duration-300 h-full">
                     {project.image ? (
                       <div className="aspect-video overflow-hidden relative group">
                         <img 

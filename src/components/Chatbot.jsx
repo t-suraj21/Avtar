@@ -112,7 +112,7 @@ export default function Chatbot() {
                     className={`max-w-[80%] rounded-lg px-4 py-2 ${
                       msg.sender === "user"
                         ? "bg-primary text-[#FFFFFF]"
-                        : "bg-white/10 text-[#E8E8E8]"
+                        : "bg-black/30 text-white"
                     }`}
                   >
                     <p className="text-sm">{msg.text}</p>
@@ -131,7 +131,7 @@ export default function Chatbot() {
                   <button
                     key={reply}
                     onClick={() => handleQuickReply(reply)}
-                    className="px-3 py-1 bg-white/5 hover:bg-white/10 rounded-full text-xs transition"
+                    className="px-3 py-1 bg-orange-500/10 hover:bg-orange-500/20 rounded-full text-xs transition"
                   >
                     {reply}
                   </button>
@@ -148,7 +148,7 @@ export default function Chatbot() {
                   onChange={(e) => setInput(e.target.value)}
                   onKeyPress={(e) => e.key === "Enter" && handleSend()}
                   placeholder="Type your message..."
-                  className="flex-1 rounded-lg bg-white/5 border border-white/20 px-3 py-2 text-sm outline-none focus:border-primary"
+                  className="flex-1 rounded-lg bg-black/30 border border-orange-500/20 px-3 py-2 text-sm outline-none focus:border-orange-500 text-white"
                 />
                 <button
                   onClick={handleSend}

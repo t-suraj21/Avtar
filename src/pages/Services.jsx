@@ -263,7 +263,7 @@ export default function Services() {
 
                   {/* Animated Divider */}
                   <motion.div
-                    className="relative h-1 mb-4 overflow-hidden rounded-full bg-white/10"
+                    className="relative h-1 mb-4 overflow-hidden rounded-full bg-orange-500/10"
                   >
                     <motion.div
                       className="absolute inset-0 bg-gradient-to-r from-primary to-secondary"
@@ -304,7 +304,7 @@ export default function Services() {
                     </Link>
                     <Link to="/contact">
                       <motion.button
-                        className="px-6 py-3 border-2 border-white/20 backdrop-blur-xl rounded-xl font-semibold hover:bg-white/10 transition-all"
+                        className="px-6 py-3 border-2 border-orange-500/30 backdrop-blur-xl rounded-xl font-semibold hover:bg-orange-500/10 transition-all text-white"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                       >
@@ -407,7 +407,7 @@ export default function Services() {
                 </Link>
                 <Link to="/portfolio">
                   <motion.button
-                    className="px-10 py-4 border-2 border-white/20 backdrop-blur-xl rounded-full font-bold text-lg hover:bg-white/10 transition-all"
+                    className="px-10 py-4 border-2 border-orange-500/50 backdrop-blur-xl rounded-full font-bold text-lg hover:bg-orange-500/10 transition-all text-white"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                   >

@@ -208,7 +208,7 @@ export default function Contact() {
                   required
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  className="w-full rounded-xl bg-white/5 border border-white/20 px-4 py-3 outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                  className="w-full rounded-xl bg-black/30 border border-orange-500/20 px-4 py-3 outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-500/20 transition-all resize-none text-white"
                   placeholder="Tell us about your project..."
                 />
               </div>
@@ -334,7 +334,7 @@ export default function Contact() {
                     key={social.name}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
-                    className="w-12 h-12 bg-white/5 hover:bg-white/10 rounded-xl flex items-center justify-center border border-white/20 transition-all"
+                    className="w-12 h-12 bg-orange-500/10 hover:bg-orange-500/20 rounded-xl flex items-center justify-center border border-orange-500/20 transition-all"
                     title={social.name}
                   >
                     <span className="text-xl">{social.icon}</span>

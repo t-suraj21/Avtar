@@ -182,7 +182,7 @@ export default function BlogPost() {
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: 0.7 + index * 0.05 }}
                   whileHover={{ scale: 1.1, y: -2 }}
-                  className="px-4 py-2 bg-white/5 border border-white/10 rounded-full text-sm text-white/70 hover:bg-white/10 hover:border-primary/30 hover:text-primary transition-all duration-300"
+                  className="px-4 py-2 bg-black/30 border border-orange-500/20 rounded-full text-sm text-gray-300 hover:bg-orange-500/10 hover:border-orange-500/40 hover:text-orange-400 transition-all duration-300"
                 >
                   #{tag}
                 </motion.span>

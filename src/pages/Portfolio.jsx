@@ -175,7 +175,7 @@ export default function Portfolio() {
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}
-                className="bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-6 hover:bg-white/10 transition-all"
+                className="bg-black/30 backdrop-blur-xl border border-orange-500/20 rounded-2xl p-6 hover:bg-black/40 transition-all"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}

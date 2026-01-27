@@ -369,7 +369,7 @@ export default function About() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.1 * idx }}
-                    className="px-3 py-1 bg-white/5 rounded-full text-xs text-[#94A3B8] border border-white/10"
+                    className="px-3 py-1 bg-orange-500/10 rounded-full text-xs text-gray-300 border border-orange-500/20"
                   >
                     {skill}
                   </motion.span>
@@ -467,7 +467,7 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
                     whileHover={{ x: 10, scale: 1.02 }}
-                    className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-primary/30 transition-all"
+                    className="flex items-center gap-3 p-3 bg-black/30 rounded-lg border border-orange-500/20 hover:border-orange-500/40 transition-all"
                   >
                     <span className="text-primary">✓</span>
                     <span>{skill}</span>
@@ -492,7 +492,7 @@ export default function About() {
                     viewport={{ once: true }}
                     transition={{ delay: idx * 0.05 }}
                     whileHover={{ x: -10, scale: 1.02 }}
-                    className="flex items-center gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:border-secondary/30 transition-all"
+                    className="flex items-center gap-3 p-3 bg-black/30 rounded-lg border border-orange-500/20 hover:border-orange-500/40 transition-all"
                   >
                     <span className="text-secondary">✓</span>
                     <span>{skill}</span>
