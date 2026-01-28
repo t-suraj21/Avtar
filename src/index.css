@@ -4,9 +4,9 @@
   --font-inter: Inter, ui-sans-serif, system-ui;
   --font-poppins: Poppins, ui-sans-serif, system-ui;
   
-  --color-primary: #7C3AED;
-  --color-secondary: #F97316;
-  --color-accent: #10B981;
+  --color-primary: #FF6B35;
+  --color-secondary: #FF8C42;
+  --color-accent: #FFA559;
 }
 
 /* Base styles */
@@ -25,7 +25,7 @@ html, body, #root {
 }
 
 body {
-  background: #1a1a2e;
+  background: #0a0a0a;
   color: #ffffff;
   font-family: var(--font-inter);
   -webkit-font-smoothing: antialiased;
@@ -93,17 +93,17 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
-  background: linear-gradient(135deg, #F97316 0%, #EA580C 100%);
+  background: linear-gradient(135deg, #FF6B35 0%, #FF8C42 100%);
   color: #FFFFFF;
   padding: 0.5rem 1rem;
   font-weight: 500;
-  box-shadow: 0 4px 12px 0 rgba(249, 115, 22, 0.4);
+  box-shadow: 0 4px 12px 0 rgba(255, 107, 53, 0.4);
   transition: all 0.3s;
 }
 
 .btn-primary:hover {
-  background: linear-gradient(135deg, #EA580C 0%, #C2410C 100%);
-  box-shadow: 0 8px 20px 0 rgba(249, 115, 22, 0.6);
+  background: linear-gradient(135deg, #FF8C42 0%, #FFA559 100%);
+  box-shadow: 0 8px 20px 0 rgba(255, 107, 53, 0.6);
   transform: translateY(-2px);
 }
 
@@ -112,11 +112,11 @@ img {
   align-items: center;
   justify-content: center;
   border-radius: 0.5rem;
-  background-color: #F97316;
+  background-color: #FF6B35;
   color: #FFFFFF;
   padding: 0.5rem 1rem;
   font-weight: 500;
-  box-shadow: 0 4px 12px 0 rgba(249, 115, 22, 0.3);
+  box-shadow: 0 4px 12px 0 rgba(255, 107, 53, 0.3);
   transition: all 0.3s;
 }
 

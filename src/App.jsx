@@ -3,17 +3,12 @@ import Chatbot from "./components/Chatbot";
 import Navbar from "./components/Navbar";
 import CustomCursor from "./components/CustomCursor";
 import AppRoutes from "./routes/AppRoutes";
-import { useLocation } from "react-router-dom";
 
 export default function App() {
-  const location = useLocation();
-  const isHomePage = location.pathname === "/";
-
   return (
     <div className="min-h-screen flex flex-col">
       <CustomCursor />
-      {/* Only show navbar on non-home pages (Home has its own integrated navbar) */}
-      {!isHomePage && <Navbar />}
+      <Navbar />
       <div className="flex-1">
         <AppRoutes />
       </div>

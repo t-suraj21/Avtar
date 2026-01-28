@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [scrollBg, setScrollBg] = useState('from-[#1a1a2e] via-[#16213e] to-[#0f3460]');
+  const [scrollBg, setScrollBg] = useState('from-[#0a0a0a] via-[#1a0f0a] to-[#0f0600]');
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], [0, -50]);
 
@@ -18,17 +18,17 @@ export default function Home() {
       const documentHeight = document.documentElement.scrollHeight;
       const scrollPercentage = (scrollPosition / (documentHeight - windowHeight)) * 100;
 
-      // Define color transitions based on scroll position
+      // Define color transitions based on scroll position - Orange-Blackish theme
       if (scrollPercentage < 20) {
-        setScrollBg('from-[#1a1a2e] via-[#16213e] to-[#0f3460]');
+        setScrollBg('from-[#0a0a0a] via-[#1a0f0a] to-[#0f0600]');
       } else if (scrollPercentage < 40) {
-        setScrollBg('from-[#16213e] via-[#0f3460] to-[#1a1a1a]');
+        setScrollBg('from-[#1a0f0a] via-[#0f0600] to-[#1a0808]');
       } else if (scrollPercentage < 60) {
-        setScrollBg('from-[#0f3460] via-[#1a1a1a] to-[#2d1b4e]');
+        setScrollBg('from-[#0f0600] via-[#1a0808] to-[#120a00]');
       } else if (scrollPercentage < 80) {
-        setScrollBg('from-[#1a1a1a] via-[#2d1b4e] to-[#1f1f1f]');
+        setScrollBg('from-[#1a0808] via-[#120a00] to-[#0d0500]');
       } else {
-        setScrollBg('from-[#2d1b4e] via-[#1f1f1f] to-[#1a1a2e]');
+        setScrollBg('from-[#120a00] via-[#0d0500] to-[#0a0a0a]');
       }
     };
 
@@ -64,7 +64,15 @@ export default function Home() {
   ];
 
   return (
-    <main className={`min-h-screen bg-gradient-to-br ${scrollBg} relative overflow-hidden transition-all duration-1000`}>
+    <main className={`min-h-screen bg-gradient-to-br ${scrollBg} relative overflow-hidden transition-all duration-1000`} style={{ cursor: `radial-gradient(circle, rgba(249, 115, 22, 0.8) 0%, rgba(10, 10, 10, 1) 70%)` }}>
+      <style>{`
+        * {
+          cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="%23f97316" opacity="0.3"/><circle cx="12" cy="12" r="4" fill="%230a0a0a"/><circle cx="12" cy="12" r="2" fill="%23f97316"/></svg>') 12 12, auto;
+        }
+        a, button {
+          cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="%23f97316" opacity="0.5"/><circle cx="12" cy="12" r="5" fill="%230a0a0a"/><circle cx="12" cy="12" r="3" fill="%23f97316"/></svg>') 12 12, pointer;
+        }
+      `}</style>
       {/* Animated Background - Mobile & Desktop */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         {/* Reduced particles for better performance */}
@@ -89,9 +97,9 @@ export default function Home() {
           />
         ))}
 
-        {/* Gradient Orbs - Optimized */}
+        {/* Gradient Orbs - Optimized - Orange Theme */}
         <motion.div
-          className="absolute top-20 -left-20 w-96 h-96 bg-primary/20 rounded-full blur-[120px]"
+          className="absolute top-20 -left-20 w-96 h-96 bg-orange-600/15 rounded-full blur-[120px]"
           animate={{
             scale: [1, 1.1, 1],
             opacity: [0.3, 0.4, 0.3],
@@ -103,13 +111,25 @@ export default function Home() {
           }}
         />
         <motion.div
-          className="absolute bottom-20 -right-20 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]"
+          className="absolute bottom-20 -right-20 w-96 h-96 bg-orange-500/15 rounded-full blur-[120px]"
           animate={{
             scale: [1.1, 1, 1.1],
             opacity: [0.4, 0.3, 0.4],
           }}
           transition={{
             duration: 10,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-orange-700/10 rounded-full blur-[150px]"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.3, 0.2],
+          }}
+          transition={{
+            duration: 15,
             repeat: Infinity,
             ease: "linear",
           }}
@@ -142,7 +162,7 @@ export default function Home() {
             </div>
 
             <div className="hidden lg:flex items-center gap-3">
-              <Link to="/contact" className="px-6 py-2.5 bg-linear-to-r from-primary to-secondary rounded-full font-semibold text-[#FFFFFF] shadow-lg hover:shadow-xl hover:scale-105 transition-all text-sm">
+              <Link to="/contact" className="px-6 py-2.5 bg-gradient-to-r from-orange-500 to-orange-600 rounded-full font-semibold text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all text-sm">
                 Get Started
               </Link>
             </div>
@@ -254,9 +274,9 @@ export default function Home() {
               />
               <defs>
                 <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" stopColor="#6366F1" stopOpacity="0.3" />
-                  <stop offset="50%" stopColor="#6366F1" stopOpacity="1" />
-                  <stop offset="100%" stopColor="#6366F1" stopOpacity="0.3" />
+                  <stop offset="0%" stopColor="#f97316" stopOpacity="0.3" />
+                  <stop offset="50%" stopColor="#ea580c" stopOpacity="1" />
+                  <stop offset="100%" stopColor="#f97316" stopOpacity="0.3" />
                 </linearGradient>
               </defs>
             </svg>
@@ -265,51 +285,47 @@ export default function Home() {
       </section>
 
       {/* Avtar Name Scroller Section */}
-      <section className="py-12 sm:py-16 px-4 border-y border-orange-500/10 bg-black/20 overflow-hidden">
-        <div className="container-custom max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-          >
-          </motion.div>
-          
-          {/* Infinite Scrolling Avtar Name */}
-          <div className="relative">
-            <div className="overflow-hidden">
-              <motion.div 
-                className="flex gap-8 sm:gap-12 md:gap-16 items-center"
-                animate={{
-                  x: [0, -800],
-                }}
-                transition={{
-                  x: {
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 15,
-                    ease: "linear",
-                  },
-                }}
-              >
-                {/* Repeat Avtar name multiple times for seamless scrolling */}
-                {[...Array(12)].map((_, index) => (
-                  <div
-                    key={index}
-                    className="flex-shrink-0 text-white/5 hover:text-orange-500/20 transition-all duration-300 cursor-default"
-                  >
-                    <span className="text-4xl sm:text-5xl md:text-6xl font-poppins font-bold whitespace-nowrap">
-                      Avtar
-                    </span>
-                  </div>
-                ))}
-              </motion.div>
-            </div>
-            
-            {/* Fade effect on edges */}
-            <div className="absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-[#1a1a2e] to-transparent pointer-events-none"></div>
-            <div className="absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-[#1a1a2e] to-transparent pointer-events-none"></div>
+      <section className="py-12 sm:py-16 border-y border-orange-500/10 bg-gradient-to-r from-black/30 via-orange-950/20 to-black/30 overflow-hidden">
+        {/* Infinite Scrolling Avtar Name */}
+        <div className="relative">
+          <div className="overflow-hidden">
+            <motion.div 
+              className="flex gap-8 sm:gap-12 md:gap-16 items-center"
+              animate={{
+                x: [0, -800],
+              }}
+              transition={{
+                x: {
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 15,
+                  ease: "linear",
+                },
+              }}
+            >
+              {/* Repeat Avtar name multiple times for seamless scrolling */}
+              {[...Array(12)].map((_, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 transition-all duration-300 cursor-default"
+                  style={{
+                    WebkitTextStroke: '2px rgba(249, 115, 22, 0.3)',
+                    WebkitTextFillColor: 'transparent',
+                  }}
+                >
+                  <span className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins font-bold whitespace-nowrap hover:opacity-100" style={{
+                    WebkitTextStroke: '2px rgba(249, 115, 22, 0.5)',
+                  }}>
+                    Avtar
+                  </span>
+                </div>
+              ))}
+            </motion.div>
           </div>
+          
+          {/* Fade effect on edges */}
+          <div className="absolute inset-y-0 left-0 w-20 sm:w-32 bg-gradient-to-r from-black to-transparent pointer-events-none"></div>
+          <div className="absolute inset-y-0 right-0 w-20 sm:w-32 bg-gradient-to-l from-black to-transparent pointer-events-none"></div>
         </div>
       </section>
 
@@ -375,7 +391,7 @@ export default function Home() {
       </section>
 
       {/* Stats/Impact Section - Hidden on Mobile */}
-      <section className="hidden md:block py-16 sm:py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-black/20">
+      <section className="hidden md:block py-16 sm:py-20 md:py-32 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-orange-950/10 via-black/30 to-orange-950/10">
         <div className="container-custom max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left - Content */}
@@ -385,12 +401,12 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <div className="inline-block px-4 py-2 bg-primary/10 border border-primary/30 rounded-full text-primary text-sm font-medium mb-6">
+              <div className="inline-block px-4 py-2 bg-orange-500/10 border border-orange-500/30 rounded-full text-orange-400 text-sm font-medium mb-6">
                 Data Insights
               </div>
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-6">
                 <span className="text-[#E8E8E8]">Improved </span>
-                <span className="text-primary">decision-making</span>
+                <span className="bg-gradient-to-r from-orange-400 to-orange-600 bg-clip-text text-transparent">decision-making</span>
               </h2>
               <p className="text-[#94A3B8] mb-8 leading-relaxed">
                 By leveraging real-time insights and comprehensive data analysis, you can make informed decisions with confidence, reducing uncertainty.
@@ -437,7 +453,7 @@ export default function Home() {
                       viewport={{ once: true }}
                       transition={{ delay: i * 0.1, duration: 0.6 }}
                     >
-                      <div className="w-full h-full bg-linear-to-t from-primary to-primary/40 rounded-t-lg group-hover:from-primary group-hover:to-primary/60 transition-all cursor-pointer"></div>
+                      <div className="w-full h-full bg-gradient-to-t from-orange-500 to-orange-400/40 rounded-t-lg group-hover:from-orange-600 group-hover:to-orange-500/60 transition-all cursor-pointer"></div>
                       <div className="absolute -bottom-6 left-0 right-0 text-center text-[#94A3B8] text-xs">
                         M{i + 1}
                       </div>
@@ -448,11 +464,11 @@ export default function Home() {
                 {/* Legend */}
                 <div className="mt-10 pt-6 border-t border-white/10 flex items-center justify-between text-sm">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 bg-primary rounded-sm"></div>
+                    <div className="w-3 h-3 bg-orange-500 rounded-sm"></div>
                     <span className="text-[#94A3B8]">Success Rate</span>
                   </div>
                   <motion.div 
-                    className="text-primary font-bold text-2xl"
+                    className="text-orange-500 font-bold text-2xl"
                     initial={{ scale: 0 }}
                     whileInView={{ scale: 1 }}
                     viewport={{ once: true }}
@@ -510,7 +526,7 @@ export default function Home() {
                         <div className="absolute inset-0 bg-gradient-to-t from-orange-600/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                       </div>
                     ) : (
-                      <div className="aspect-video bg-gradient-to-br from-primary/20 to-secondary/20 p-4 md:p-6 flex items-center justify-center">
+                      <div className="aspect-video bg-gradient-to-br from-orange-500/20 to-orange-600/20 p-4 md:p-6 flex items-center justify-center">
                         <motion.div
                           className="text-3xl md:text-4xl"
                           whileHover={{ scale: 1.2, rotate: 10 }}
@@ -552,7 +568,31 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-16 sm:py-20 md:py-32 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="absolute inset-0 bg-linear-to-r from-primary/10 to-secondary/10"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-orange-900/20 via-black/40 to-orange-800/20"></div>
+        <motion.div
+          className="absolute top-10 right-10 w-72 h-72 bg-orange-600/20 rounded-full blur-[100px]"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.3, 0.5, 0.3],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-10 left-10 w-80 h-80 bg-orange-500/15 rounded-full blur-[120px]"
+          animate={{
+            scale: [1.2, 1, 1.2],
+            opacity: [0.4, 0.3, 0.4],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
         <div className="container-custom max-w-4xl mx-auto text-center relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

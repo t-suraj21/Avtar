@@ -3,48 +3,60 @@ export const portfolio = [
     id: "p1",
     title: "E-Commerce Platform",
     type: "web",
+    category: "WEB",
     description: "Full-stack online shopping platform with payment integration",
     tech: ["React", "Node.js", "Express", "MongoDB", "Stripe"],
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop&q=80",
+    icon: "🛒"
   },
   {
     id: "p2",
     title: "Real Estate Website",
     type: "web",
+    category: "WEB",
     description: "Property listing platform with search and filter features",
     tech: ["React", "Node.js", "Express", "MongoDB", "Maps API"],
     image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=600&fit=crop&q=80",
+    icon: "🏠"
   },
   {
     id: "p3",
     title: "Fitness Tracking App",
     type: "app",
+    category: "MOBILE",
     description: "Cross-platform mobile app for workout and nutrition tracking",
     tech: ["React Native", "Node.js", "MongoDB", "Real-time APIs"],
     image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80",
+    icon: "💪"
   },
   {
     id: "p4",
     title: "Task Management System",
     type: "web",
+    category: "WEB",
     description: "Collaborative project management tool with team features",
     tech: ["React", "Node.js", "Express", "MongoDB", "Socket.io"],
     image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop&q=80",
+    icon: "📋"
   },
   {
     id: "p5",
     title: "Restaurant Booking App",
     type: "app",
+    category: "MOBILE",
     description: "Mobile application for restaurant reservations and orders",
     tech: ["React Native", "Firebase", "Stripe", "Google Maps"],
     image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=800&h=600&fit=crop&q=80",
+    icon: "🍽️"
   },
   {
     id: "p6",
     title: "Social Media Dashboard",
     type: "web",
+    category: "DESIGN",
     description: "Analytics dashboard for social media management",
     tech: ["React", "Node.js", "Express", "MongoDB", "Chart.js"],
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop&q=80",
+    icon: "📊"
   },
 ];
